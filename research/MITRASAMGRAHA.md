@@ -45,8 +45,10 @@ translations (correct wording ≠ gold wording).
 **Result lineage** (AGENTS.md §9): every row logs `result_id · gold_version · model_version · split ·
 seed · config · date`, appended to `data/corpus/mitrasamgraha-eval-log.jsonl`.
 
-**Error-family analysis:** `tools/analyze_mitra_errors.py` reads the log and surfaces low-chrF / low-
-fidelity rows side-by-side (SANSK/GOLD/MODEL) for manual error-family classification.
+**Error-family analysis:** `tools/eval_mitrasamgraha.py` prints each row side-by-side (SANSK/GOLD/MODEL) as
+it scores, so low-chrF / low-fidelity rows can be read directly for manual error-family classification. The
+judge's free-text reasoning per row is also captured (the `judgment` field) — the raw material for
+`pipeline/hypothesis_lab.py`.
 
 ## 4. FIRST MEASURED RESULTS (deepseek-v4-flash)
 

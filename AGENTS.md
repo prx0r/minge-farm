@@ -79,6 +79,11 @@ python3 agent/trace.py --all     # every run is logged + greppable
 - **Never `pkill`** — find the exact PID, `kill <PID>`.
 - **RAM is the scarcest resource** (4-core / 8GB / no swap, 2 agents) — run SMALL samples (n=2–3), one job
   at a time, ~2GB free. Stream, never bulk-load.
+- **CHECK the budget before + during any heavy job** (`agent/ramwatch.py` or `free -h | head -2 && uptime`):
+  - **GOOD to start a job:** available RAM ≥ 1 GiB AND load < 3.0.
+  - **DO NOT start:** available < 500 MiB OR load ≥ 3.5 (near-OOM; a new job can kill both agents).
+  - **If available < ~400 MiB while running, KILL the job by PID and let the box recover.**
+  - Never run two RAM-heavy jobs at once (e.g. a hermes batch + an index build) — serialize.
 - **The crypto layer proves integrity, never quality.**
 - **Reuse, don't rebuild** (COMET, MTME, MQM, ezkl, risc0 — see `repos/README.md`).
 
@@ -87,4 +92,5 @@ python3 agent/trace.py --all     # every run is logged + greppable
 > **Timestamped, logged, content-addressed, registered.** Every build note is dated; every hermes run and
 > experiment is in the trace; every number is a content-addressed nanopublication on fixed gold; every doc
 > is in the MANIFEST; and `check.py` + `trace.py` + `audit.py` enforce it all deterministically — so the
-> project can't get messy even if an agent forgets.
+> project can't get messy even if an agent forgets. RAM/CPU is budgeted before every heavy job so the box
+> doesn't crash.

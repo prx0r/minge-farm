@@ -55,7 +55,8 @@ def verify_translation_claim(source: str, candidate: str, gold: str = "") -> dic
         config={"method": "verify.py", "candidate": candidate, "ref_gold": gold},
         metrics={"deterministic_gate": proof["deterministic_gate"], **gold_result},
         assertion=f"source '{source[:40]}' → candidate '{candidate[:40]}' is "
-                  f"{proof['deterministic_gate']} ({', '.join(proof['blocking']) or 'all checks pass'})")
+                  f"{proof['deterministic_gate']} ({', '.join(proof['blocking']) or 'all checks pass'})",
+        verified=proof["deterministic_gate"] == "PASS")
     # verdict: proof gate PASS + (if gold given) gold match
     gate_ok = proof["deterministic_gate"] == "PASS"
     gold_ok = gold_result.get("gold_ok", True)

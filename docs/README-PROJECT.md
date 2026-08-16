@@ -28,6 +28,38 @@ vs human gold, per school × per period, on the same fixed data.
 
 ---
 
+## ⭐ THE DOC MAP + READ ORDER (how everything fits)
+
+```
+START HERE → VISION.md (the goal + checkpointed roadmap)
+   │
+   ├─ HOW-IT-WORKS.md   (the mechanisms: skills, goals, verification, why it's deterministic)
+   ├─ INTEGRATION.md    (the hermes-native build + our lab additions, how they compose)
+   ├─ CANONICAL-DATA-SPEC.md  (every schema the lab writes + the strict validator)
+   ├─ RECIPES.md        (every agent command + how to expand the lab)
+   ├─ AGENTS.md         (the ONE RULE + the anti-mess standard — timestamped·logged·content-addressed·registered)
+   ├─ GOALS.md          (the concrete checkpoints, Phase 1–6, each a falsifiable gate)
+   │
+   ├─ AGENT-ORCHESTRATION.md  (how a hermes agent runs the lab: kanban + cron + skills)
+   ├─ HERMES-MCP-API.md       (the MCP/API machine interface)
+   │
+   ├─ repos/README.md         (the adopted toolkits: COMET, MTME, MQM, ezkl, risc0)
+   │
+   └─ research/               (the verified deep-dives)
+       ├─ HOW-WE-BEAT-AND-IMPROVE-THE-BENCHMARK.md      (the meta-eval protocol + improvable axes)
+       ├─ LEGITIMATE-SANSKRIT-BENCHMARK.md              (the 15-step recipe, status per step)
+       ├─ HERMES-VERIFICATION-ARCHITECTURE.md           (every hermes feature → verification)
+       ├─ AGENTIC-SCIENCE-MECHANISMS.md                 (the bulletproof patterns we steal)
+       ├─ DEEP-DIVE-COMET-CRYPTO-VERIFICATION.md        (COMET/ML + crypto proofs)
+       ├─ HF-SANSKRIT-LORA-PERSONA-SURVEY.md            (persona translation, LoRA, lemmatization)
+       └─ ... (PROOF-OF-TRANSLATION, MITRASAMGRAHA, SANSKRIT-BENCHMARKS, SCIENCE-LAB-VISION)
+```
+
+**One-line read order:** VISION → HOW-IT-WORKS → RECIPES → AGENTS → GOALS → then dive into research/ as
+needed. The code all runs through `agent/run.py` and every result is in `agent/trace.py`.
+
+---
+
 ## 1. THE ONE-LINE STATE
 
 **The lab is built and runs on real Sanskrit gold. The immediate next step is Phase B — run off-the-shelf
@@ -152,6 +184,8 @@ PYTHONPATH=. python3 pipeline/comet_scorer.py
 
 | Doc (path) | What it is |
 |---|---|
+| **`HOW-IT-WORKS.md`** | **the master explanation: skills, goals, kanban review-gates, the crypto/provenance verification loop, why it's deterministic** |
+| **`RECIPES.md`** | **every agent command/recipe + how to expand the lab properly** |
 | **`AGENT-ORCHESTRATION.md`** | **how a hermes agent runs the lab autonomously (kanban + cron + skills + run.py/watchdog)** |
 | **`HERMES-MCP-API.md`** | **the hermes MCP/API interface + recipes for driving the lab (the machine interface)** |
 | **`skills/sanskrit-benchy/SKILL.md`** | **the hermes lab-driver skill** |

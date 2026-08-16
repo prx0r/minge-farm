@@ -128,6 +128,78 @@
       "owner": "science-lab",
       "role": "how every hermes feature (kanban swarm/review-gates, goals, cron, memory, MCP, hooks, moa) enforces the crypto/provenance anti-hallucination layer",
       "validator": "check.py --refs"
+    },
+    "HOW-IT-WORKS.md": {
+      "id": "sb:how-it-works",
+      "owner": "science-lab",
+      "role": "the master explanation: skills, goals, kanban review-gates, the crypto/provenance verification loop, why it's deterministic",
+      "validator": "check.py --refs"
+    },
+    "RECIPES.md": {
+      "id": "sb:recipes",
+      "owner": "science-lab",
+      "role": "every agent command/recipe + how to expand the lab properly",
+      "validator": "check.py --refs"
+    },
+    "docs/README-PROJECT.md": {
+      "id": "sb:readme-internal",
+      "owner": "science-lab",
+      "role": "the real internal project README (the public README.md is a decoy for the private repo)",
+      "validator": "check.py --refs"
+    },
+    "research/README.md": {
+      "id": "sb:research:index",
+      "owner": "science-lab",
+      "role": "the research/ folder index (the verified deep-dives, read order)",
+      "validator": "check.py --refs"
+    },
+    "repos/CLONED-REPO-REVIEW.md": {
+      "id": "sb:repos:review",
+      "owner": "science-lab",
+      "role": "the comprehensive review of all cloned repos (Engram, darshana-graph, eigenius, AI-Scientist ecosystem, the 32 arXiv papers) + how they power the autonomous science lab",
+      "validator": "check.py --refs"
+    },
+    "research/HYPER-TAILORED-VISION-MAP.md": {
+      "id": "sb:research:hypertailored",
+      "owner": "science-lab",
+      "role": "every arXiv paper + cloned mechanism explicitly mapped to OUR vision (re-render, fine-tune, autonomous Sanskrit lab) \u2014 the definitive hypertailored map",
+      "validator": "check.py --refs"
+    },
+    "INTEGRATION.md": {
+      "id": "sb:integration",
+      "owner": "science-lab",
+      "role": "the integration map: hermes-native build vs our lab additions, how they compose into one agent-manageable system",
+      "validator": "check.py --refs"
+    },
+    "CANONICAL-DATA-SPEC.md": {
+      "id": "sb:data:spec",
+      "owner": "science-lab",
+      "role": "the canonical data spec: every schema the lab writes + its strict validator (the exact field contracts)",
+      "validator": "check.py --refs"
+    },
+    "research/ML-STACK-SPEC.md": {
+      "id": "sb:research:ml-stack",
+      "owner": "science-lab",
+      "role": "the legitimate ML stack spec: COMET evaluation, frontier translation env (LoRA adapters), datasets (have/need), training methods, honest gaps",
+      "validator": "check.py --refs"
+    },
+    "research/visionadvice.md": {
+      "id": "sb:research:vision-advice",
+      "owner": "science-lab",
+      "role": "the frontier-blueprint (saved verbatim): the full legitimate-Sanskrit-MT architecture \u2014 COMET/QE, calibration, conformal prediction, multi-reference benchmark, proof-carrying translation",
+      "validator": "check.py --refs"
+    },
+    "INFRA-REQUIREMENTS.md": {
+      "id": "sb:infra",
+      "owner": "science-lab",
+      "role": "what infra is needed to run the vision autonomously (GPU/torch + human MQM gold); the phases I'll run once available",
+      "validator": "check.py --refs"
+    },
+    "HANDSOVER-2026-08-16-BUILD.md": {
+      "id": "sb:handover:build",
+      "owner": "science-lab",
+      "role": "the timestamped build handover: full inventory, verified results, data, the legitimate ML path, honest gaps, infra needed",
+      "validator": "check.py --refs"
     }
   },
   "implementation": {
@@ -250,6 +322,72 @@
       "owner": "science-lab",
       "role": "the one-command verification gate: proof gate + gold anti-hallucination + content-addressed record",
       "validator": "run: python3 agent/verify.py --source x --candidate y --gold z"
+    },
+    "agent/ramwatch.py": {
+      "id": "sb:agent:ramwatch",
+      "owner": "science-lab",
+      "role": "the RAM/CPU budget watchdog \u2014 check free/load before + during heavy jobs to prevent OOM crashes",
+      "validator": "run: python3 agent/ramwatch.py"
+    },
+    "pipeline/checkpoint.py": {
+      "id": "sb:kernel:checkpoint",
+      "owner": "science-lab",
+      "role": "the vision\u2192checkpoint engine: decompose a goal into a falsifiable checkpoint DAG; only a passed gate marks done (autonomous goal-hitting)",
+      "validator": "run: PYTHONPATH=. python3 pipeline/checkpoint.py --status"
+    },
+    "pipeline/renderer.py": {
+      "id": "sb:kernel:renderer",
+      "owner": "science-lab",
+      "role": "re-render a passage into N candidate translations; keep the equally-valid set (proof gate + semantic threshold)",
+      "validator": "run: PYTHONPATH=. python3 pipeline/renderer.py --dry-run"
+    },
+    "pipeline/finetune_builder.py": {
+      "id": "sb:kernel:finetune",
+      "owner": "science-lab",
+      "role": "build fine-tuning register-pair data (plain/precise) from gold + re-renders, LoRA-ready",
+      "validator": "run: PYTHONPATH=. python3 pipeline/finetune_builder.py --n 1 --dry-run"
+    },
+    "pipeline/tree_search.py": {
+      "id": "sb:kernel:tree_search",
+      "owner": "science-lab",
+      "role": "metric-grounded tree search (AIDE mechanism) \u2014 every node scored by a REAL computed metric on fixed gold, best-first expansion; the autonomous strategy loop",
+      "validator": "run: PYTHONPATH=. python3 pipeline/tree_search.py --dry-run"
+    },
+    "agent/memory.py": {
+      "id": "sb:agent:memory",
+      "owner": "science-lab",
+      "role": "the deterministic temporal memory (DML) \u2014 records/query agent decisions with provenance + drift; anti-regression",
+      "validator": "run: python3 agent/memory.py"
+    },
+    "pipeline/schemas.py": {
+      "id": "sb:kernel:schemas",
+      "owner": "science-lab",
+      "role": "the canonical schema contracts (incl. multi-reference PASSAGE) + validators",
+      "validator": "run: PYTHONPATH=. python3 pipeline/schemas.py"
+    },
+    "agent/validate_data.py": {
+      "id": "sb:agent:validate_data",
+      "owner": "science-lab",
+      "role": "the strict data gate: validate every data file against its schema (wired into check.py --data)",
+      "validator": "run: PYTHONPATH=. python3 agent/validate_data.py"
+    },
+    "pipeline/data_import.py": {
+      "id": "sb:kernel:data_import",
+      "owner": "science-lab",
+      "role": "import + catalog the frontier datasets (MITRA cross-canon triangulation, streamed)",
+      "validator": "run: PYTHONPATH=. python3 pipeline/data_import.py --catalog"
+    },
+    "pipeline/sanskrit_mqm.py": {
+      "id": "sb:kernel:sanskrit_mqm",
+      "owner": "science-lab",
+      "role": "the Sanskrit MQM error taxonomy + challenge-set generator (controlled bad translations \u2014 SaQE training material)",
+      "validator": "run: PYTHONPATH=. python3 pipeline/sanskrit_mqm.py --taxonomy"
+    },
+    "agent/annotation.py": {
+      "id": "sb:agent:annotation",
+      "owner": "science-lab",
+      "role": "the human MQM gold annotation contract + exporter + validator (SaReward + SaError)",
+      "validator": "run: PYTHONPATH=. python3 agent/annotation.py --export 1"
     }
   }
 }

@@ -7,3 +7,7 @@ data/corpus/experiment-reports/
 data/corpus/mitrasamgraha-eval-log.jsonl
 data/runs/
 data/benchmark-registry.json
+data/checkpoints.json
+data/data-catalog.json
+data/lab-memory.db
+data/corpus/runs/

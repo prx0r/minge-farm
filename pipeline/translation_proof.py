@@ -112,6 +112,45 @@ def check_term_consistency(candidate: str) -> dict:
             "reason": "terms consistent" if not issues else "; ".join(issues)}
 
 
+def check_citation_grounding(source: str, candidate: str, glossary: dict | None = None) -> dict:
+    """Every substantive term in the candidate must trace to a REAL source (the darshana-graph rule).
+
+    Adopted from the darshana-graph debate simulator's anti-hallucination rule ("agents can only cite real
+    graph edges; fabricated citations are rejected"). Here: a translation may not introduce a technical term
+    that is neither in the source nor in the canonical glossary. If the candidate contains a technical term
+    that has NO source match AND is not a known glossary term, it is a fabricated addition — reject.
+
+    This is a CONSERVATIVE check: it only fires on terms the glossary recognizes, so a legitimate synonym
+    that isn't a glossary term doesn't false-positive. The gold-reference check (verify.py) is the stronger
+    anti-hallucination signal; this catches the "invented technical claim" case.
+    """
+    glossary = glossary or CANONICAL_GLOSSARY
+    # collect the known terms (both source tokens + glossary terms) the candidate MAY legitimately use
+    known = set()
+    for w in re.split(r"\s+", source.lower()):
+        w = re.sub(r"[^a-zā-īūṛṝḷḹṃñṅśṣṭḍḥ]", "", w)
+        if len(w) >= 4:
+            known.add(w)
+    for term, renderings in glossary.items():
+        known.add(term.lower())
+        for r in renderings:
+            known.add(r.lower())
+    # check each glossary term the candidate uses is grounded in the SOURCE (not just known)
+    ungrounded = []
+    for term, renderings in glossary.items():
+        used = [r for r in renderings if r.lower() in candidate.lower()]
+        if used:
+            # grounded iff the source actually contains the IAST term (or a source token starts with it)
+            src_contains = term.lower() in source.lower() or \
+                           any(w.startswith(term.lower()[:3]) for w in re.split(r"\s+", source.lower())
+                               if len(w) >= 4)
+            if not src_contains:
+                ungrounded.append(f"'{term}' used in candidate but not in source")
+    return {"PASS": len(ungrounded) == 0, "ungrounded": ungrounded,
+            "reason": "all technical terms grounded in source" if not ungrounded
+                      else "; ".join(ungrounded)}
+
+
 def verify_translation(source: str, candidate: str,
                        gold: Optional[str] = None,
                        semantic_fidelity: Optional[float] = None) -> dict:
@@ -121,6 +160,7 @@ def verify_translation(source: str, candidate: str,
         "COVERAGE": check_coverage(source, candidate),
         "ABSTENTION": check_abstention(candidate),
         "TERM_CONSISTENCY": check_term_consistency(candidate),
+        "CITATION_GROUNDING": check_citation_grounding(source, candidate),
     }
     blocking = [name for name, c in checks.items() if not c["PASS"]]
     passed = all(c["PASS"] for c in checks.values())

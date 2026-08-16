@@ -118,6 +118,33 @@ def exemplars():
     return _CACHE
 
 
+def _is_junk_gold(gold: str, source: str) -> bool:
+    """A gold is junk (not a real translation) if it's near-empty or IAST-heavy (source-repeat).
+
+    Found in the Mitrasamgraha audit: ~2.9% of golds contain Sanskrit transliteration (source-repeats,
+    untranslated terms). Those pairs would distort chrF (a candidate that echoes Sanskrit scores high even
+    though it's a bad translation). Dropping them makes the benchmark honest.
+    """
+    _IAST = "āīūṛṝḷḹṃñṅśṣṭḍḥ"
+    if len(gold.strip()) < 8:
+        return True
+    iast = sum(1 for c in gold if c in _IAST)
+    # >5 IAST chars in an "English" gold ⇒ it's echoing Sanskrit, not translating
+    if iast > 5:
+        return True
+    return False
+
+
+def clean_exemplars(work: str | None = None):
+    """The fixed gold with junk pairs removed (source-repeats + near-empty golds).
+
+    Returns the honest, measurable gold for the benchmark. The FULL set is still available via exemplars()
+    (for provenance); clean_exemplars() is what the benchmark scores against.
+    """
+    return [e for e in exemplars() if (work is None or e["work"] == work)
+            and not _is_junk_gold(e["gold"], e["source"])]
+
+
 def traditions() -> list[str]:
     return TRADITIONS
 

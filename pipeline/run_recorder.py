@@ -34,6 +34,27 @@ def sha256(obj) -> str:
     return hashlib.sha256(canonical.encode("utf-8")).hexdigest()
 
 
+# the eigenius 4-kind epistemic ladder (verified: eigenius_eigenius, "how-known" substrate).
+# Each kind has STRONGER guarantees than the last:
+#   DECLARED  — a human asserts it (weakest: opinion)
+#   OBSERVED  — measured/recorded with provenance (a logged value)
+#   DERIVED   — produced by a typed pipeline whose steps are auditable (a computed value on gold)
+#   VERIFIED  — derived AND re-checked by a formal/deterministic proof system (the strongest)
+# A number is only "VERIFIED" if it passes a deterministic gate (our proof gate / audit), not just computed.
+EPISTEMIC_KINDS = ["DECLARED", "OBSERVED", "DERIVED", "VERIFIED"]
+
+
+def epistemic_kind(*, verified: bool = False, derived: bool = True, observed: bool = True) -> str:
+    """Assign the eigenius epistemic kind to a result based on how it was produced."""
+    if verified:
+        return "VERIFIED"      # derived AND passed a deterministic proof gate
+    if derived:
+        return "DERIVED"       # computed by a reproducible pipeline on fixed data
+    if observed:
+        return "OBSERVED"      # measured/recorded with provenance
+    return "DECLARED"          # human assertion only
+
+
 def file_sha(path: Path) -> str:
     return sha256({"file": str(path), "content": path.read_text(encoding="utf-8", errors="ignore")})
 
@@ -84,8 +105,12 @@ class RunRecorder:
 
     def record(self, *, step: str, gold: list[dict], config: dict, metrics: dict,
                raw: list[dict] | None = None, assertion: str = "",
-               evidence_code: str = "ECO:0000203") -> dict:
-        """Record one run. Returns the run record (signature, out.hash, nanopublication)."""
+               evidence_code: str = "ECO:0000203", verified: bool = False) -> dict:
+        """Record one run. Returns the run record (signature, out.hash, nanopublication).
+
+        verified=True marks the result as VERIFIED (derived AND passed a deterministic gate) — the
+        strongest eigenius kind. Default is DERIVED (computed on fixed gold).
+        """
         sig = run_signature(gold, config)
         # hash the OUTPUT too (metrics + raw) — out.hash
         out_hash = sha256({"metrics": metrics, "raw": raw or []})
@@ -96,6 +121,7 @@ class RunRecorder:
             "git": git_state(),
             "ts": datetime.now(timezone.utc).isoformat(),
             # nanopublication: every headline number carries assertion + evidence + provenance
+            "kind": epistemic_kind(verified=verified, derived=True, observed=True),
             "nanopublication": {
                 "assertion": assertion or f"{step} produced metrics {json.dumps(metrics)}",
                 "evidence": {"code": evidence_code, "artifact": f"run:{sig[:12]}"},

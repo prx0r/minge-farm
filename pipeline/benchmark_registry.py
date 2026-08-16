@@ -54,13 +54,21 @@ class BenchmarkRegistry:
 
     def add_passage(self, *, source: str, school: str, period: str, tier: int, genre: str,
                     source_id: str, source_date: str, license: str, term_density: float,
-                    n_terms: int) -> dict:
-        """Add one passage with full lineage + content-address."""
+                    n_terms: int, references: list[str] | None = None,
+                    alternative_senses: dict | None = None) -> dict:
+        """Add one passage with full lineage + content-address + MULTI-REFERENCE (PaliBench).
+
+        references: one or more independent human English translations (R1..Rn) — the blueprint's
+                    multi-reference design so we don't penalize valid alternative interpretations.
+        alternative_senses: e.g. {"vimarśa": ["reflexive-awareness", "recognition"]} — interpretive
+                    alternatives retained rather than pretending one English string is uniquely correct.
+        """
         ph = passage_hash(source, school)
         rec = {"passage_id": f"{school}:{source_id}:{ph[:10]}", "hash": ph,
                "source": source, "school": school, "period": period, "tier": tier,
                "genre": genre, "source_id": source_id, "source_date": source_date,
-               "license": license, "term_density": term_density, "n_terms": n_terms}
+               "license": license, "term_density": term_density, "n_terms": n_terms,
+               "references": references or [], "alternative_senses": alternative_senses or {}}
         self.data["passages"].append(rec)
         return rec
 
@@ -113,6 +121,39 @@ def build_default() -> dict:
         "model", "checkpoint", "decoding_config", "metric_version", "test_set_version",
         "reference_set", "human_gold_split", "date",
     ])
+    return reg.freeze()
+
+
+def attach_references(multi_ref_file: str | None = None) -> dict:
+    """Attach MULTI-REFERENCE translations to the registry passages (the PaliBench design).
+
+    Reads a file of references and attaches them to matching passages. Supports:
+      - the re-render valid-set format: {source, gold, valid_renderings: [{candidate, ...}]}
+      - a JSONL of {source, references: [R1..Rn]}
+    """
+    reg = BenchmarkRegistry()
+    data = reg.load() or reg.data
+    if not data.get("passages"):
+        return build_default()
+    if multi_ref_file and Path(multi_ref_file).exists():
+        # detect format
+        try:
+            obj = json.loads(Path(multi_ref_file).read_text(encoding="utf-8"))
+        except Exception:
+            obj = None
+        refs_by_source = {}
+        if isinstance(obj, dict) and "valid_renderings" in obj:
+            refs_by_source[obj["source"]] = [v["candidate"] for v in obj["valid_renderings"]]
+        elif isinstance(obj, list):
+            for rec in obj:
+                refs_by_source[rec.get("source", "")] = rec.get("references", [])
+        # attach to matching passages
+        for p in data["passages"]:
+            for src, refs in refs_by_source.items():
+                if refs and (p["source"] == src or src in p["source"]):
+                    p["references"] = refs
+    data["version"] = "0.2.0-multiref"
+    reg.data = data
     return reg.freeze()
 
 

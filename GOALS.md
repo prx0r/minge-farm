@@ -87,3 +87,27 @@ logged number / a real artifact exists, not when a file is written. Order: **Pha
   date`, or it doesn't exist.
 - **The crypto layer (Phase 5) proves integrity, never quality** — keep the two distinct in every claim.
 - Build **Phase 1 → 6** in order; never present a phase as done before its gate passes.
+
+## PHASE 7 — the re-render + fine-tune capability (the product vision)
+
+> Take a full text, re-render passages into multiple equally-valid translations, and build fine-tuning data.
+
+- [x] **render-engine** — `pipeline/renderer.py`: re-render a passage into N register-candidates, score each
+      (proof gate + semantic), keep the equally-valid set. **DONE (verified):** a real passage re-rendered
+      into 3 of 4 equally-valid candidates (literal/plain/natural PASS + 0.8 semantic; precise correctly
+      rejected). Gate: ≥2 valid candidates. ✅
+- [x] **finetune-data** — `pipeline/finetune_builder.py`: build LoRA-ready plain/precise/literal/natural
+      register-pair data from gold + re-renders. **DONE (verified):** `data/finetune/sanskrit-translation-
+      pairs.jsonl` with register-tagged pairs. ✅
+- [x] **checkpoint DAG** — `pipeline/checkpoint.py`: decompose each vision into falsifiable checkpoints
+      (effect + gate + prereqs); the agent works the NEXT checkpoint and only marks DONE when the gate
+      passes. **DONE (verified):** the re-render + fine-tune DAG advanced gold-ready → render-engine →
+      finetune-data, all DONE. ✅
+- [x] **AIDE tree search** — `pipeline/tree_search.py`: metric-grounded search over strategies. **DONE
+      (verified):** a real run scored baseline 0.700 and honestly reported "no improvement" rather than
+      fabricating a win. ✅
+- [x] **deterministic memory** — `agent/memory.py` (DML) + Engram installed. **DONE (verified):** records +
+      queries past decisions (anti-regression). ✅
+- [ ] **(later, needs GPU) LoRA fine-tune per register** — train a "plain English" and "precise" adapter from
+      the validated pairs; each output verified by the same gate. **Gate:** a per-register adapter whose
+      outputs pass the proof gate + semantic threshold. (Blocked on GPU, not code.)

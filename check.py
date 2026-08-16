@@ -3,12 +3,13 @@
 
   --manifest  MANIFEST.json is valid JSON + every listed doc exists
   --refs      every doc's referenced /root/... paths resolve (best-effort)
+  --data      every data file matches its canonical schema (agent/validate_data.py)
   --status    run all checks (default)
 
 Exit 0 = pass, 1 = fail. A doc/claim that doesn't resolve is flagged (docs are a projection).
 """
 from __future__ import annotations
-import json, os, re, sys
+import json, os, re, subprocess, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -44,6 +45,20 @@ def check_refs() -> list[str]:
     return errors
 
 
+def check_data() -> list[str]:
+    """The strict schema gate: every data file matches its canonical contract."""
+    try:
+        p = subprocess.run(["python3", str(ROOT / "agent" / "validate_data.py")],
+                           capture_output=True, text=True, timeout=120)
+        if p.returncode != 0:
+            # surface the first few violations
+            return [line.strip() for line in p.stdout.splitlines()
+                    if "✗" in line or "violation" in line][:10] or ["data schema violations"]
+    except Exception as e:
+        return [f"data gate error: {e}"]
+    return []
+
+
 def main() -> int:
     mode = sys.argv[1] if len(sys.argv) > 1 else "--status"
     errors = []
@@ -51,6 +66,8 @@ def main() -> int:
         errors += check_manifest()
     if mode in ("--status", "--refs"):
         errors += check_refs()
+    if mode in ("--status", "--data"):
+        errors += check_data()
     if errors:
         print(f"sanskritbenchy check: FAIL ({len(errors)} issue{'s' if len(errors)!=1 else ''})")
         for e in errors[:20]:

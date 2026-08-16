@@ -50,6 +50,46 @@ hash/Merkle-commit (source, hypothesis, reference, metric_score)
   + (optional) EZKL/RISC-Zero proof        → "the metric scored these inputs" (compute integrity)
 ```
 
+## 3.5 THE AUTONOMOUS GOAL-HITTING (how we get there without babysitting)
+
+The project hits goals autonomously via a **vision → checkpoint DAG** (`pipeline/checkpoint.py`): a vision
+is decomposed into falsifiable checkpoints, each with an effect + prerequisites + a **deterministic gate**.
+A checkpoint is DONE only when its gate PASSES (a logged, content-addressed, deterministic check). An agent
+or the watchdog works the DAG: it always knows the NEXT checkpoint (prereqs done, not done), runs it, and
+only marks DONE when the gate passes. **The agent doesn't guess what "done" means — the DAG defines it.**
+
+```
+VISION → checkpoint DAG (effect + gate per step) → agent works the NEXT checkpoint
+  → gate PASSES → mark DONE → next
+  → gate FAILS → NOT done → the agent CANNOT move past it
+```
+
+**Example (the re-render + fine-tune vision):**
+```
+[gold-ready]    a clean fixed gold exists (junk dropped)                     → gate: clean_exemplars() > 5000  ✅ DONE
+[render-engine] a passage re-renders into N equally-valid translations       → gate: renderer.py --dry-run     ⬜ NEXT
+[finetune-data] fine-tuning register-pair data (plain/precise) built          → gate: finetune_builder.py
+```
+
+## 3.6 THE RE-RENDER + FINE-TUNE CAPABILITY (the product vision)
+
+**The capability:** take a full text, re-render passages/sections into **multiple translations that all
+score as equally valid** in our ML verification system (`pipeline/renderer.py` — generates candidates in
+literal/plain/precise/natural registers, keeps those that PASS the proof gate AND semantic-fidelity
+threshold). Then build **fine-tuning data** for "more plain English" and "more precise" registers
+(`pipeline/finetune_builder.py`) — LoRA-ready instruction pairs, ready to train per-register adapters.
+
+```
+FULL TEXT → passage → re-render into N candidates (registers) → score each (proof gate + semantic)
+  → keep the EQUALLY-VALID set → build fine-tune pairs (plain / precise / literal / natural)
+  → (later) LoRA fine-tune per register → "translate this as plain English" / "precisely"
+```
+
+This is what makes "translate a text as different people / in different registers, each verified" real:
+the renderer proves each variant is equally valid, and the fine-tune data turns the validated variants
+into trainable adapters. All of it passes through the same content-addressed verification (nothing is
+"valid" unless a logged proof gate + semantic check says so).
+
 > **The honest rule (verified deep-dive):** the crypto layer proves **integrity** (this run produced this
 > output), never **quality**. Only the metric + deterministic gate prove quality. Keep the two distinct in
 > every claim. **Never call a zkML proof "proof of a good translation."**

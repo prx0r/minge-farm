@@ -225,6 +225,65 @@ def step_verify(source: str, candidate: str, gold: str) -> dict:
     return rec
 
 
+def step_checkpoints() -> dict:
+    """The vision → checkpoint DAG status (the autonomous goal-hitting mechanism)."""
+    out = _sh("python3", str(ROOT / "pipeline" / "checkpoint.py"), "--status", timeout=120)
+    rec = {"step": "checkpoints", "output": out[-2000:]}
+    log_line(rec)
+    print(out)
+    return rec
+
+
+def step_render(n: int, dry: bool) -> dict:
+    """Re-render a passage into N equally-valid translations (the vision's core capability)."""
+    out = _sh("python3", str(ROOT / "pipeline" / "renderer.py"), "--passage", "0",
+              "--n", str(n), ("--dry-run" if dry else ""), timeout=600)
+    rec = {"step": "render", "n": n, "dry": dry, "output": out[-2000:]}
+    log_line(rec)
+    print(out)
+    return rec
+
+
+def step_finetune(n: int, dry: bool) -> dict:
+    """Build fine-tuning register-pair data from gold + re-renders."""
+    out = _sh("python3", str(ROOT / "pipeline" / "finetune_builder.py"), "--n", str(n),
+              ("--dry-run" if dry else ""), timeout=600)
+    rec = {"step": "finetune", "n": n, "dry": dry, "output": out[-2000:]}
+    log_line(rec)
+    print(out)
+    return rec
+
+
+def step_tree_search(depth: int, fanout: int, dry: bool) -> dict:
+    """Metric-grounded tree search over experiment strategies (AIDE mechanism)."""
+    out = _sh("python3", str(ROOT / "pipeline" / "tree_search.py"), "--depth", str(depth),
+              "--fanout", str(fanout), "--n", "2", ("--dry-run" if dry else ""), timeout=900)
+    rec = {"step": "tree_search", "depth": depth, "fanout": fanout, "dry": dry, "output": out[-2000:]}
+    log_line(rec)
+    print(out)
+    return rec
+
+
+def step_memory(query: str, dry: bool) -> dict:
+    """Query the lab's deterministic temporal memory (past decisions, anti-regression)."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("lab_memory", ROOT / "agent" / "memory.py")
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    mem = mod.LabMemory()
+    if query:
+        hits = mem.search(query)
+        rec = {"step": "memory", "query": query, "n_hits": len(hits)}
+        print(f"=== memory search '{query}': {len(hits)} past decision(s) ===")
+        for h in hits[:10]:
+            print(f"  {getattr(h, 'key', h)}: {getattr(h, 'value', '')[:60]}")
+    else:
+        rec = {"step": "memory", "query": "", "n_hits": 0}
+        print("=== memory ===")
+        print("  (deterministic event-sourced memory; query with --source/--search or add a --step)")
+    log_line(rec)
+    return rec
+
+
 STEPS = {
     "validate": step_validate, "eval": step_eval, "hypothesis": step_hypothesis,
     "proof": step_proof, "report": step_report, "watchdog": step_watchdog,
@@ -232,6 +291,8 @@ STEPS = {
     "sanskrit_texts": step_sanskrit_texts, "benchmark_report": step_benchmark_report,
     "gold": step_gold, "comet": step_comet, "frontier": step_frontier,
     "verify": step_verify,
+    "checkpoints": step_checkpoints, "render": step_render, "finetune": step_finetune,
+    "tree_search": step_tree_search, "memory": step_memory,
 }
 
 
@@ -246,6 +307,7 @@ def main() -> int:
     ap.add_argument("--source", default="")
     ap.add_argument("--candidate", default="")
     ap.add_argument("--gold", default="")
+    ap.add_argument("--search", default="")
     ap.add_argument("--loop", action="store_true")
     ap.add_argument("--max-chars", type=int, default=1500)
     args = ap.parse_args()
@@ -282,6 +344,16 @@ def main() -> int:
         if not args.source or not args.candidate:
             print("--step verify needs --source and --candidate"); return 2
         step_verify(args.source, args.candidate, args.gold)
+    elif args.step == "checkpoints":
+        step_checkpoints()
+    elif args.step == "render":
+        step_render(args.n, False)
+    elif args.step == "finetune":
+        step_finetune(args.n, False)
+    elif args.step == "tree_search":
+        step_tree_search(2, 2, False)
+    elif args.step == "memory":
+        step_memory(args.search, False)
     return 0
 
 
