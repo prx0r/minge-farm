@@ -236,6 +236,12 @@
       "owner": "all",
       "role": "the reusable agentic operating system: the canonical structure, conventions, file lifecycle, gates, verification spine, checkpoint DAG, handover \u2014 the pattern any project adopts",
       "validator": "check.py --refs"
+    },
+    "research/PINCHING-OPENPATALA.md": {
+      "id": "sb:pinching-openpatala",
+      "owner": "all",
+      "role": "how the openpatala corpus engine feeds the benchmark: school/period conditioning (G6 moat), multi-references (N4), fresh source-bound gold, the OCR channel, + what to pinch",
+      "validator": "check.py --refs"
     }
   },
   "implementation": {
