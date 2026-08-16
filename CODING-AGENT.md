@@ -50,9 +50,9 @@ echo "started PID $!"
 python3 agent/ramwatch.py     # SAFE / CAUTION / CRITICAL
 free -h | head -2 && uptime   # the raw numbers
 ```
-- **SAFE** (avail ≥1GiB, load <3): OK to start a heavy job.
-- **CAUTION** (avail <1GiB OR load ≥3): do light work; don't start a RAM-heavy job.
-- **CRITICAL** (avail <400MiB OR load ≥3.5): a new job can OOM-kill BOTH agents. STOP heavy work.
+- **SAFE** (avail ≥1GiB): OK to start a heavy job. (Load is advisory, not a gate.)
+- **CAUTION** (avail <1GiB): do light work; don't start a RAM-heavy job.
+- **CRITICAL** (avail <400MiB): a new job can OOM-kill BOTH agents. STOP heavy work.
 - Re-check `ramwatch.py` WHILE a job runs; if it drops to CRITICAL, `kill <PID>` the job and let the box
   recover.
 - Run SMALL samples (n=2–3). Never run two heavy jobs at once.

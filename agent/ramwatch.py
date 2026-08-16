@@ -27,20 +27,26 @@ def read_mem():
 
 
 def read_load():
-    """Load average (1-min) — on a 4-core box, <3 is safe, >=3.5 is near ceiling."""
+    """Load average (1-min) — informational only; the hard gate is available RAM."""
     try:
         return round(float(os.getloadavg()[0]), 2)
     except Exception:
         return 0.0
 
 
+# The hard gate is AVAILABLE RAM (the user's rule): ~3 GiB is fine; worry only when it drops under 1 GiB.
+SAFE_RAM = 1.0     # available >= this GiB → SAFE, safe to start a heavy job
+CRITICAL_RAM = 0.4 # available <  this GiB → CRITICAL, never start (OOM risk)
+# Load is ADVISORY only (the box is shared; another agent's job can spike it without OOM risk).
+
+
 def verdict(mem, load):
     avail = mem["available_gib"]
-    if avail >= 1.0 and load < 3.0:
-        return "SAFE", "available RAM ok + load ok — safe to start a heavy job"
-    if avail < 0.4 or load >= 3.5:
-        return "CRITICAL", f"available {avail:.2f} GiB / load {load:.2f} — DO NOT start; box near-OOM"
-    return "CAUTION", f"available {avail:.2f} GiB / load {load:.2f} — constrained; light work or wait"
+    if avail >= SAFE_RAM:
+        return "SAFE", f"available {avail:.2f} GiB / load {load:.2f} — RAM fine, safe to start a heavy job"
+    if avail < CRITICAL_RAM:
+        return "CRITICAL", f"available {avail:.2f} GiB / load {load:.2f} — DO NOT start; RAM under {CRITICAL_RAM} GiB (OOM risk)"
+    return "CAUTION", f"available {avail:.2f} GiB / load {load:.2f} — RAM low; light work or wait"
 
 
 def main() -> int:
@@ -54,7 +60,7 @@ def main() -> int:
                           "load": load, "note": note}))
     else:
         print(f"RAM: {mem['available_gib']:.2f} GiB available / {mem['total_gib']:.2f} total")
-        print(f"LOAD (1-min): {load:.2f} (4-core ceiling ~3.5)")
+        print(f"LOAD (1-min): {load:.2f} (advisory — RAM is the hard gate)")
         print(f"VERDICT: {status} — {note}")
     return 0 if status == "SAFE" else 1
 

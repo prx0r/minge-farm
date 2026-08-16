@@ -81,8 +81,8 @@ python3 agent/trace.py --all     # every run is logged + greppable
 - **RAM is the scarcest resource** (4-core / 8GB / no swap, 2 agents) — run SMALL samples (n=2–3), one job
   at a time, ~2GB free. Stream, never bulk-load.
 - **CHECK the budget before + during any heavy job** (`agent/ramwatch.py` or `free -h | head -2 && uptime`):
-  - **GOOD to start a job:** available RAM ≥ 1 GiB AND load < 3.0.
-  - **DO NOT start:** available < 500 MiB OR load ≥ 3.5 (near-OOM; a new job can kill both agents).
+  - **GOOD to start a job:** available RAM ≥ 1 GiB (e.g. ~3 GiB is fine). Load is advisory, not a gate.
+  - **DO NOT start:** available < ~400-500 MiB (real OOM risk; a new job can kill both agents).
   - **If available < ~400 MiB while running, KILL the job by PID and let the box recover.**
   - Never run two RAM-heavy jobs at once (e.g. a hermes batch + an index build) — serialize.
 - **The crypto layer proves integrity, never quality.**
