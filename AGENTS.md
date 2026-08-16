@@ -1,9 +1,10 @@
 # AGENTS.md — sanskritbenchy (the Sanskrit benchmark science lab)
 
 *2026-08-16 · The governing file for any agent working in this project. Read this FIRST, then
-`VISION.md`, then `AGENTS.md` at the repo root for the box rules. This file defines the ONE RULE and the
-**deterministic anti-mess standard**: timestamped build notes, a centralized run/experiment trace, and
-content-addressed provenance for every number.*
+`VISION.md`, then `CODING-AGENT.md` (the strict operational discipline: no-timeout backgrounding, file
+conventions, the review protocol, testing + monitoring), then `AGENTS.md` at the repo root for the box
+rules. This file defines the ONE RULE and the **deterministic anti-mess standard**: timestamped build
+notes, a centralized run/experiment trace, and content-addressed provenance for every number.*
 
 ---
 

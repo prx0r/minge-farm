@@ -111,3 +111,12 @@ logged number / a real artifact exists, not when a file is written. Order: **Pha
 - [ ] **(later, needs GPU) LoRA fine-tune per register** — train a "plain English" and "precise" adapter from
       the validated pairs; each output verified by the same gate. **Gate:** a per-register adapter whose
       outputs pass the proof gate + semantic threshold. (Blocked on GPU, not code.)
+
+## THE DUAL DEV PLANS (which plan to follow)
+
+- **CPU box (now):** `DEV-PLAN-NO-GPU.md` — keep building the instruments (SaQE data, challenge sets,
+  annotation, triangulation, benchmark) that need no torch.
+- **GPU box (when available):** `DEV-PLAN-WITH-GPU.md` — the full ML path: reproduce baseline → COMET
+  meta-validation → SaQE → calibration + conformal → LoRA/translator → proof-carrying system → papers.
+- **The checkpoint DAG** (`pipeline/checkpoint.py`) is the live truth: 8/9 gates DONE, `lora-adapter`
+  (GPU) is the next gate. Run `python3 agent/run.py --step checkpoints` to see it.

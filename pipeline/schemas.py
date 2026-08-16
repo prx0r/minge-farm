@@ -143,3 +143,10 @@ ANNOTATION_RECORD = {  # data/annotation/*.jsonl — a human MQM gold annotation
     "passage_id": S, "source": S, "candidate_a": S, "candidate_b": S,
     "preference": S, "preference_reason": S, "errors": L, "annotator": S,
 }
+
+
+PROOF_EVIDENCE = {  # the proof-carrying translation artifact (visionadvice §12)
+    "source": D, "candidate": D, "deterministic_gate": S, "blocking": L,
+    "parallel_evidence": D, "candidate_distribution": D,
+    "provenance": D, "decision": S, "artifact_hash": H,
+}

@@ -38,9 +38,11 @@ START HERE → VISION.md (the goal + checkpointed roadmap)
    ├─ CANONICAL-DATA-SPEC.md  (every schema the lab writes + the strict validator)
    ├─ RECIPES.md        (every agent command + how to expand the lab)
    ├─ AGENTS.md         (the ONE RULE + the anti-mess standard — timestamped·logged·content-addressed·registered)
+   ├─ CODING-AGENT.md   (the strict how-to: no-timeout backgrounding, box budget, file lifecycle, review + test protocol)
    ├─ GOALS.md          (the concrete checkpoints, Phase 1–6, each a falsifiable gate)
    │
    ├─ AGENT-ORCHESTRATION.md  (how a hermes agent runs the lab: kanban + cron + skills)
+   ├─ METASTRUCTURE.md        (the reusable agentic operating system — the pattern, packaged in /root/agentic-infra)
    ├─ HERMES-MCP-API.md       (the MCP/API machine interface)
    │
    ├─ repos/README.md         (the adopted toolkits: COMET, MTME, MQM, ezkl, risc0)

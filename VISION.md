@@ -98,17 +98,26 @@ into trainable adapters. All of it passes through the same content-addressed ver
 
 ## 4. THE CHECKPOINTED ROADMAP (each = a falsifiable gate)
 
-### ✅ DONE
-- **[x] Gold control** — `sanskrit_gold.py`: 5,601 exemplars (373 Pratyabhijñā / 123 Krama / 278 Śaiva /
-  4,827 Vedic) + Mitrasamgraha test (5,552) + 49 IPVV + 23 kramasadbhava.
-- **[x] Deterministic proof gate** — `translation_proof.py`: faithful→PASS, hallucinated→BLOCKED,
-  source-repeat→BLOCKED(ABSTENTION). Verified.
-- **[x] Experiment lab + registry** — `experiment_lab.py`: 3 logged translation experiments (chrF 0.61/0.59/
-  0.58, semantic 0.9/0.8/0.73), `--report`, `--sweep`, auto-report.
-- **[x] Frontier datasets imported** — Sāmayik (2,417), Itihāsa (11,721) → `data/frontier/` +
-  `frontier_gold.py`.
-- **[x] Hermes callable** — `pipeline/model.py` works (deepseek-v4-flash, 1M context).
-- **[x] Research deep-dives** — COMET/crypto verification, HF/LoRA/persona survey, how-we-beat.
+### ✅ DONE (the CPU-runnable foundation — all verified)
+- **[x] Gold control** — `sanskrit_gold.py`: 5,601 exemplars + `clean_exemplars()` (drops junk/source-repeat).
+- **[x] Deterministic proof gate** — `translation_proof.py` (incl. **CITATION_GROUNDING** — rejects
+  invented terms, the darshana-graph rule).
+- **[x] Experiment lab + registry** — `experiment_lab.py` (3 logged, report/sweep).
+- **[x] Frontier datasets** — Sāmayik (2,417), Itihāsa (11,721), MITRA cross-canon (imported).
+- **[x] Hermes callable** — `model.py` (deepseek-v4-flash, 1M ctx).
+- **[x] Re-render** — `renderer.py`: N equally-valid translations + candidate-disagreement signal. **Verified:**
+  3 valid candidates, convergent.
+- **[x] Fine-tune data** — `finetune_builder.py`: LoRA register-pair data.
+- **[x] Challenge sets** — `sanskrit_mqm.py`: the Sanskrit MQM taxonomy + controlled bad translations (SaQE data).
+- **[x] Multi-reference benchmark** — `benchmark_registry.py` (PaliBench: references[] + alternative_senses).
+- **[x] AIDE tree search** — `tree_search.py`: metric-grounded strategy search.
+- **[x] Checkpoint DAG** — `checkpoint.py`: the vision→checkpoint gates (8/9 DONE).
+- **[x] Verification spine** — `run_recorder.py` (content-address + eigenius kind), `verify.py`, `audit.py`,
+  `schemas.py` + `validate_data.py` (strict data gate), `trace.py`, `memory.py` (DML), `ramwatch.py`.
+- **[x] Proof-carrying evidence** — `proof_carrying.py`: the immutable translation artifact (§12).
+- **[x] Confidence contract** — `confidence.py`: the feature-vector + multidimensional proof score (§7,§20).
+- **[x] Cross-canon triangulation** — `triangulation.py`: Tibetan/Chinese evidence channel (§3,§13).
+- **[x] Research deep-dives** — 13 verified (incl. `visionadvice.md`, the frontier blueprint).
 
 ### ⬜ PHASE 1 — the FIRST real proof (immediate, no torch)
 - [ ] **Run the meta-eval on our own gold** — `validate_benchmark.py --n 2 --m 3 --test mitrasamgraha`
@@ -116,8 +125,7 @@ into trainable adapters. All of it passes through the same content-addressed ver
       registry, showing whether our semantic-judge beats chrF.
 - [ ] **Run the same meta-eval on Sāmayik + Itihāsa gold** — external validation. **Gate:** tau on frontier
       gold too.
-- [ ] **Fix IPVV candidate timeout** — pass a large `timeout` to `chat()` (long passages fit 1M context;
-      the "0 candidates" was a per-call timeout, not context). **Gate:** IPVV produces candidates.
+- [ ] **Fix IPVV candidate timeout** — pass a large `timeout` to `chat()`. **Gate:** IPVV produces candidates.
 
 ### ⬜ PHASE 2 — learned metric baseline (needs torch/GPU)
 - [ ] **Install torch + COMET** on a torch-enabled box (not this 8GB box). **Gate:** `comet_scorer.py`
@@ -155,6 +163,48 @@ into trainable adapters. All of it passes through the same content-addressed ver
       pipeline: text → lemma → persona → verify → commit → proof.
 - [ ] **The licensing wrapper** — the verified, attributable guarantee as a service. **Gate:** a product
       spec + the legal/licensing framing defined (no precedent exists — we define it).
+
+---
+
+## 4.5 THE GRANULAR ATTAINMENT PATH (the exact route to the final vision)
+
+The vision — a calibrated, proof-carrying Sanskrit MT system (`research/visionadvice.md`) — decomposes
+into these gates. Everything **✅ DONE** is built + verified on this box; the rest is the route forward.
+
+```
+✅ gold-ready → ✅ render-engine → ✅ finetune-data → ✅ full-text-render → ✅ fine-tune-verified
+   → ✅ triangulation (cross-canon evidence)
+   → ✅ confidence-contract (feature-vector + multidim proof score)
+   → ✅ proof-evidence (the immutable artifact)
+   → ⬜ lora-adapter (per-register LoRA — needs GPU)                     ← the GPU gate
+   → ⬜ COMET baseline (Phase 2 — needs torch)
+   → ⬜ SaQE training (the Sanskrit evaluator — needs the MQM gold + GPU)
+   → ⬜ calibrated confidence + conformal layer (§7/§8 — needs human gold)
+   → ⬜ the *vimarśa* school/period conditioning (§3 — needs the lemma map)
+   → ⬜ the multi-reference blind benchmark (§19 — PaliBench + human gold)
+   → ⬜ the licensing wrapper (the product)
+```
+
+**The granular gates (each falsifiable):**
+1. **gold-ready** ✅ — clean fixed gold > 5,000 exemplars (junk dropped).
+2. **render-engine** ✅ — a passage re-renders into ≥2 equally-valid translations (proof PASS + semantic ≥ 0.5).
+3. **finetune-data** ✅ — LoRA register-pair data exists, schema-valid.
+4. **full-text-render** ✅ — a full passage → N equally-valid, verified translations.
+5. **fine-tune-verified** ✅ — the fine-tune pairs are VERIFIED (each passed the proof gate).
+6. **triangulation** ✅ — the cross-canon (Tibetan/Chinese) evidence channel works.
+7. **confidence-contract** ✅ — the feature-vector + multidim proof-score contract is scaffolded.
+8. **proof-evidence** ✅ — every translation ships the immutable evidence artifact.
+9. **lora-adapter** ⬜ — a per-register LoRA adapter (needs GPU).
+10. **COMET baseline** ⬜ — COMET scores + tau vs chrF/bleu (needs torch).
+11. **SaQE** ⬜ — the Sanskrit-specialized evaluator/error-detector (needs MQM gold + GPU).
+12. **calibrated-conformal** ⬜ — calibrated P(no major error) + conformal interval (needs human gold).
+13. **vimarsa-test** ⬜ — school/period-conditioned metric ranks the school-correct sense higher.
+14. **blind-benchmark** ⬜ — the multi-reference, private, PaliBench-style test.
+15. **license** ⬜ — the verified, attributable translation service.
+
+**The dependency rule:** each gate's prereqs must be DONE first (the checkpoint DAG enforces this). CPU
+gates (1-8) are done; GPU/human gates (9-15) are the route forward. Run `python3 agent/run.py --step
+checkpoints` to see the live DAG and the next gate.
 
 ---
 

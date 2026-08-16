@@ -200,6 +200,42 @@
       "owner": "science-lab",
       "role": "the timestamped build handover: full inventory, verified results, data, the legitimate ML path, honest gaps, infra needed",
       "validator": "check.py --refs"
+    },
+    "DEV-PLAN-NO-GPU.md": {
+      "id": "sb:devplan:no-gpu",
+      "owner": "science-lab",
+      "role": "the CPU-box dev plan: what to keep building without torch/GPU (SaQE data, challenge sets, annotation, benchmark, triangulation)",
+      "validator": "check.py --refs"
+    },
+    "DEV-PLAN-WITH-GPU.md": {
+      "id": "sb:devplan:with-gpu",
+      "owner": "science-lab",
+      "role": "the GPU-box dev plan: the full ML path (COMET, SaQE, LoRA, calibration+conformal, proof-carrying, benchmark+paper)",
+      "validator": "check.py --refs"
+    },
+    "CODING-AGENT.md": {
+      "id": "sb:coding-agent",
+      "owner": "all",
+      "role": "the strict operational discipline: no-timeout backgrounding, box budget, file conventions (canonical locations + lifecycle: new/current/stale/legacy), review protocol, testing + monitoring",
+      "validator": "check.py --refs"
+    },
+    "HANDSOVER-TEMPLATE.md": {
+      "id": "sb:handover:template",
+      "owner": "all",
+      "role": "the canonical handover spec \u2014 every handover MUST follow this template (what a handover must contain for a fresh agent)",
+      "validator": "check.py --refs"
+    },
+    "HANDSOVER-2026-08-16-CANONICAL.md": {
+      "id": "sb:handover:canonical",
+      "owner": "science-lab",
+      "role": "the complete current handover for the next agent \u2014 full state, checkpoint DAG, dev plans, results, data, gates, gaps, smoke test",
+      "validator": "check.py --refs"
+    },
+    "METASTRUCTURE.md": {
+      "id": "sb:metastructure",
+      "owner": "all",
+      "role": "the reusable agentic operating system: the canonical structure, conventions, file lifecycle, gates, verification spine, checkpoint DAG, handover \u2014 the pattern any project adopts",
+      "validator": "check.py --refs"
     }
   },
   "implementation": {
@@ -362,7 +398,7 @@
     "pipeline/schemas.py": {
       "id": "sb:kernel:schemas",
       "owner": "science-lab",
-      "role": "the canonical schema contracts (incl. multi-reference PASSAGE) + validators",
+      "role": "the canonical schema contracts (incl. PROOF_EVIDENCE) + validators",
       "validator": "run: PYTHONPATH=. python3 pipeline/schemas.py"
     },
     "agent/validate_data.py": {
@@ -388,6 +424,24 @@
       "owner": "science-lab",
       "role": "the human MQM gold annotation contract + exporter + validator (SaReward + SaError)",
       "validator": "run: PYTHONPATH=. python3 agent/annotation.py --export 1"
+    },
+    "pipeline/proof_carrying.py": {
+      "id": "sb:kernel:proof_carrying",
+      "owner": "science-lab",
+      "role": "the proof-carrying translation evidence artifact (visionadvice \u00a712) \u2014 immutable, inspectable",
+      "validator": "run: PYTHONPATH=. python3 pipeline/proof_carrying.py"
+    },
+    "pipeline/confidence.py": {
+      "id": "sb:kernel:confidence",
+      "owner": "science-lab",
+      "role": "the confidence feature-vector + multidimensional proof score (\u00a77,\u00a720) \u2014 CPU features computed, neural marked",
+      "validator": "run: PYTHONPATH=. python3 pipeline/confidence.py"
+    },
+    "pipeline/triangulation.py": {
+      "id": "sb:kernel:triangulation",
+      "owner": "science-lab",
+      "role": "cross-canon (Tibetan/Chinese) triangulation evidence channel (\u00a73,\u00a713) via MITRA",
+      "validator": "run: PYTHONPATH=. python3 pipeline/triangulation.py"
     }
   }
 }
