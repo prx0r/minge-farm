@@ -1,0 +1,344 @@
+{
+  "seed": 42,
+  "scope": "V2/V3 thematic C1s",
+  "cluster_count": 9,
+  "clusters": [
+    {
+      "cluster_id": "CL-3",
+      "size": 9,
+      "coherence": 3.5556,
+      "members_overlapping": 2,
+      "member_c1_ids": [
+        "V2L-nonconstructed-I",
+        "V2N-inner-appearance",
+        "V2O-orderless-support",
+        "V2P-pramatr-vyapara",
+        "V2Q-omniscient",
+        "V2R-mahesvarya",
+        "V2S-unity-mahesvarya",
+        "V3F-grace",
+        "V3I-difference-real"
+      ],
+      "edge_evidence": [
+        {
+          "a": "V2L-nonconstructed-I",
+          "b": "V2N-inner-appearance",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2L-nonconstructed-I",
+          "b": "V2O-orderless-support",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2N-inner-appearance",
+          "b": "V2O-orderless-support",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2O-orderless-support",
+          "b": "V2P-pramatr-vyapara",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V2O-orderless-support",
+          "b": "V2Q-omniscient",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2O-orderless-support",
+          "b": "V2R-mahesvarya",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2O-orderless-support",
+          "b": "V2S-unity-mahesvarya",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V2P-pramatr-vyapara",
+          "b": "V2Q-omniscient",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2R-mahesvarya",
+          "b": "V2S-unity-mahesvarya",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2S-unity-mahesvarya",
+          "b": "V3F-grace",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2S-unity-mahesvarya",
+          "b": "V3I-difference-real",
+          "type": "see_also",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_id": "CL-4",
+      "size": 9,
+      "coherence": 3.1111,
+      "members_overlapping": 1,
+      "member_c1_ids": [
+        "V2M-descent-states",
+        "V3C-one-light",
+        "V3D-synthesis",
+        "V3E-error",
+        "V3I-difference-real",
+        "V3J-agama-sivatattva",
+        "V3K-kancukas",
+        "V3L-knowers-malas",
+        "V3M-states"
+      ],
+      "edge_evidence": [
+        {
+          "a": "V2M-descent-states",
+          "b": "V3D-synthesis",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2M-descent-states",
+          "b": "V3M-states",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V3C-one-light",
+          "b": "V3D-synthesis",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V3C-one-light",
+          "b": "V3J-agama-sivatattva",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V3D-synthesis",
+          "b": "V3E-error",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V3E-error",
+          "b": "V3I-difference-real",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V3J-agama-sivatattva",
+          "b": "V3K-kancukas",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V3K-kancukas",
+          "b": "V3L-knowers-malas",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V3L-knowers-malas",
+          "b": "V3M-states",
+          "type": "see_also",
+          "weight": 2.0
+        }
+      ]
+    },
+    {
+      "cluster_id": "CL-1",
+      "size": 5,
+      "coherence": 3.4,
+      "members_overlapping": 1,
+      "member_c1_ids": [
+        "V2D-jnanasakti",
+        "V2E-external-inferred",
+        "V2F-other-minds",
+        "V2G-dream-inversion",
+        "V3F-grace"
+      ],
+      "edge_evidence": [
+        {
+          "a": "V2D-jnanasakti",
+          "b": "V2E-external-inferred",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V2E-external-inferred",
+          "b": "V2F-other-minds",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2F-other-minds",
+          "b": "V2G-dream-inversion",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V2F-other-minds",
+          "b": "V3F-grace",
+          "type": "see_also",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_id": "CL-2",
+      "size": 4,
+      "coherence": 3.5,
+      "members_overlapping": 0,
+      "member_c1_ids": [
+        "V2H-vimarsa-paravak",
+        "V2I-sphuratta",
+        "V2J-samskara",
+        "V2K-vacakasphota"
+      ],
+      "edge_evidence": [
+        {
+          "a": "V2H-vimarsa-paravak",
+          "b": "V2I-sphuratta",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V2H-vimarsa-paravak",
+          "b": "V2K-vacakasphota",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2I-sphuratta",
+          "b": "V2J-samskara",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V2J-samskara",
+          "b": "V2K-vacakasphota",
+          "type": "see_also",
+          "weight": 2.0
+        }
+      ]
+    },
+    {
+      "cluster_id": "CL-7",
+      "size": 4,
+      "coherence": 3.5,
+      "members_overlapping": 1,
+      "member_c1_ids": [
+        "V3F-grace",
+        "V3N-one-lord-many",
+        "V3O-bond-liberation",
+        "V3P-lover-union"
+      ],
+      "edge_evidence": [
+        {
+          "a": "V3F-grace",
+          "b": "V3P-lover-union",
+          "type": "see_also",
+          "weight": 1.0
+        },
+        {
+          "a": "V3N-one-lord-many",
+          "b": "V3O-bond-liberation",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V3N-one-lord-many",
+          "b": "V3P-lover-union",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V3O-bond-liberation",
+          "b": "V3P-lover-union",
+          "type": "see_also",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_id": "CL-0",
+      "size": 3,
+      "coherence": 3.6667,
+      "members_overlapping": 0,
+      "member_c1_ids": [
+        "V2A-memory-lords-power",
+        "V2B-pastness-svasamvitti",
+        "V2C-ajadapramatr"
+      ],
+      "edge_evidence": [
+        {
+          "a": "V2A-memory-lords-power",
+          "b": "V2B-pastness-svasamvitti",
+          "type": "see_also",
+          "weight": 2.0
+        },
+        {
+          "a": "V2B-pastness-svasamvitti",
+          "b": "V2C-ajadapramatr",
+          "type": "see_also",
+          "weight": 2.0
+        }
+      ]
+    },
+    {
+      "cluster_id": "CL-8",
+      "size": 2,
+      "coherence": 1.0,
+      "members_overlapping": 0,
+      "member_c1_ids": [
+        "V3G-causality",
+        "V3H-inference-across-knowers"
+      ],
+      "edge_evidence": [
+        {
+          "a": "V3G-causality",
+          "b": "V3H-inference-across-knowers",
+          "type": "see_also",
+          "weight": 1.0
+        }
+      ]
+    },
+    {
+      "cluster_id": "CL-5",
+      "size": 1,
+      "coherence": 0.0,
+      "members_overlapping": 0,
+      "member_c1_ids": [
+        "V3A-timeless-order"
+      ],
+      "edge_evidence": []
+    },
+    {
+      "cluster_id": "CL-6",
+      "size": 1,
+      "coherence": 0.0,
+      "members_overlapping": 0,
+      "member_c1_ids": [
+        "V3B-bhedabheda"
+      ],
+      "edge_evidence": []
+    }
+  ],
+  "note": "V1 (upoddhata/purvapaksa dialectic) is a dense cross-reference block; cluster it editorially, not via the shared graph."
+}

@@ -1,0 +1,34 @@
+{
+  "step": "verify",
+  "run_signature": "325f373030e52bc64ecacb474c5e981fcedb236c61910f9b0e0bc24e4a524af7",
+  "out_hash": "919ca86bb7858c0d873ad6c8256ddc512234b1942a8c71385888d37df2d9eb08",
+  "gold_hash": "7950c8046ea2d4386b8d3dac12b36c49976bb779f6d01b752f9d2150102e89f3",
+  "code_sha": "5e168ae8bfd067f8c0160e59fa89b27a11b6bf2a6b734dec67b771091dc18a5a",
+  "config_sha": "e4b7bc8ed6bc2af4bd1c6350f0eeb702f2fc22623ffefd6785b286b36089e446",
+  "config": {
+    "method": "verify.py",
+    "candidate": "The supreme One, dwelling in the highest, hidden in the depths, beginningless, one"
+  },
+  "metrics": {
+    "deterministic_gate": "BLOCKED"
+  },
+  "raw_outputs": [],
+  "git": {
+    "commit": "",
+    "diff": ""
+  },
+  "ts": "2026-08-16T13:46:35.346188+00:00",
+  "nanopublication": {
+    "assertion": "source 'paraṃ parasthaṃ gahanād anādim ekaṃ' → candidate 'The supreme One, dwelling in the highest' is BLOCKED (SOURCE_BINDING)",
+    "evidence": {
+      "code": "ECO:0000203",
+      "artifact": "run:325f373030e5"
+    },
+    "provenance": {
+      "run_signature": "325f373030e52bc64ecacb474c5e981fcedb236c61910f9b0e0bc24e4a524af7",
+      "out_hash": "919ca86bb7858c0d873ad6c8256ddc512234b1942a8c71385888d37df2d9eb08",
+      "generated_by": "sanskritbenchy/run_recorder.py",
+      "ts": "2026-08-16T13:46:35.346210+00:00"
+    }
+  }
+}

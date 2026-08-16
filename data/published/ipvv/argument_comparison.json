@@ -1,0 +1,270 @@
+{
+  "status": "INVALID_EXPERIMENT / CIRCULAR_METRIC",
+  "reason": "B-STRUCT premises are C1 titles; gt_overlap measured passage-title overlap not reasoning. Retired 2026-08-12.",
+  "original": [
+    {
+      "builder": "B-STRUCT",
+      "theme": "CL-3",
+      "n_members": 9,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": 0.167,
+      "scheme_match": 0.0
+    },
+    {
+      "builder": "B-STRUCT",
+      "theme": "CL-4",
+      "n_members": 9,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "certain",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-STRUCT",
+      "theme": "CL-1",
+      "n_members": 5,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-STRUCT",
+      "theme": "CL-2",
+      "n_members": 4,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-STRUCT",
+      "theme": "CL-7",
+      "n_members": 4,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-STRUCT",
+      "theme": "CL-0",
+      "n_members": 3,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": 0.667,
+      "scheme_match": 0.0
+    },
+    {
+      "builder": "B-LEXICAL",
+      "theme": "CL-3",
+      "n_members": 9,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": 0.0,
+      "scheme_match": 0.0
+    },
+    {
+      "builder": "B-LEXICAL",
+      "theme": "CL-4",
+      "n_members": 9,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-LEXICAL",
+      "theme": "CL-1",
+      "n_members": 5,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-LEXICAL",
+      "theme": "CL-2",
+      "n_members": 4,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-LEXICAL",
+      "theme": "CL-7",
+      "n_members": 4,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-LEXICAL",
+      "theme": "CL-0",
+      "n_members": 3,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": 0.0,
+      "scheme_match": 0.0
+    },
+    {
+      "builder": "B-GRAPH",
+      "theme": "CL-3",
+      "n_members": 9,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "certain",
+      "gt_overlap": 0.0,
+      "scheme_match": 0.0
+    },
+    {
+      "builder": "B-GRAPH",
+      "theme": "CL-4",
+      "n_members": 9,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "certain",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-GRAPH",
+      "theme": "CL-1",
+      "n_members": 5,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "certain",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-GRAPH",
+      "theme": "CL-2",
+      "n_members": 4,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-GRAPH",
+      "theme": "CL-7",
+      "n_members": 4,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-GRAPH",
+      "theme": "CL-0",
+      "n_members": 3,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 1.0,
+      "certainty": "probable",
+      "gt_overlap": 0.0,
+      "scheme_match": 0.0
+    },
+    {
+      "builder": "B-PUSHING",
+      "theme": "CL-3",
+      "n_members": 6,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 0.0,
+      "certainty": "possible",
+      "gt_overlap": 0.0,
+      "scheme_match": 1.0
+    },
+    {
+      "builder": "B-PUSHING",
+      "theme": "CL-4",
+      "n_members": 6,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 0.0,
+      "certainty": "possible",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-PUSHING",
+      "theme": "CL-1",
+      "n_members": 6,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 0.0,
+      "certainty": "possible",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-PUSHING",
+      "theme": "CL-2",
+      "n_members": 6,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 0.0,
+      "certainty": "possible",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-PUSHING",
+      "theme": "CL-7",
+      "n_members": 6,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 0.0,
+      "certainty": "possible",
+      "gt_overlap": null,
+      "scheme_match": null
+    },
+    {
+      "builder": "B-PUSHING",
+      "theme": "CL-0",
+      "n_members": 6,
+      "resolvability": 1.0,
+      "diversity": 1.0,
+      "coverage": 0.0,
+      "certainty": "possible",
+      "gt_overlap": 0.0,
+      "scheme_match": 1.0
+    }
+  ]
+}

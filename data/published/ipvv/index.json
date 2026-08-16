@@ -1,0 +1,467 @@
+{
+  "work_id": "isvarapratyabhijnavivrtivimarsini",
+  "count": 49,
+  "passages": [
+    {
+      "id": "pt:passage:ipvv:chunkA-svatyandya.md",
+      "immutable_id": "pt:pid:ipvv:165115d8eb7d",
+      "locator": "chunkA-svatyandya.md",
+      "order": 0,
+      "file": "pt-passage-ipvv-chunkA-svatyandya-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkB-eligibility-gita.md",
+      "immutable_id": "pt:pid:ipvv:8d7e43bdf318",
+      "locator": "chunkB-eligibility-gita.md",
+      "order": 1,
+      "file": "pt-passage-ipvv-chunkB-eligibility-gita-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkC-svatma-maya-upanishad.md",
+      "immutable_id": "pt:pid:ipvv:cab68738d18e",
+      "locator": "chunkC-svatma-maya-upanishad.md",
+      "order": 2,
+      "file": "pt-passage-ipvv-chunkC-svatma-maya-upanishad-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkD-memory-pramana.md",
+      "immutable_id": "pt:pid:ipvv:80f9c7f414ed",
+      "locator": "chunkD-memory-pramana.md",
+      "order": 3,
+      "file": "pt-passage-ipvv-chunkD-memory-pramana-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkE-cit-acid-dvairasya.md",
+      "immutable_id": "pt:pid:ipvv:4f780e406d0c",
+      "locator": "chunkE-cit-acid-dvairasya.md",
+      "order": 4,
+      "file": "pt-passage-ipvv-chunkE-cit-acid-dvairasya-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkF-upoddhata-k1-7.md",
+      "immutable_id": "pt:pid:ipvv:1bb4e70c35b9",
+      "locator": "chunkF-upoddhata-k1-7.md",
+      "order": 5,
+      "file": "pt-passage-ipvv-chunkF-upoddhata-k1-7-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkG-k1.2.7-1.8-citsvarupam.md",
+      "immutable_id": "pt:pid:ipvv:7db619b2d4f2",
+      "locator": "chunkG-k1.2.7-1.8-citsvarupam.md",
+      "order": 6,
+      "file": "pt-passage-ipvv-chunkG-k1-2-7-1-8-citsvarupam-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkH-k1.8-caitanyamajada-pratibimba.md",
+      "immutable_id": "pt:pid:ipvv:05765be4afff",
+      "locator": "chunkH-k1.8-caitanyamajada-pratibimba.md",
+      "order": 7,
+      "file": "pt-passage-ipvv-chunkH-k1-8-caitanyamajada-pratibimba-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkI-k1.9-1.10-kriya-karyakarana.md",
+      "immutable_id": "pt:pid:ipvv:64678ac92bc1",
+      "locator": "chunkI-k1.9-1.10-kriya-karyakarana.md",
+      "order": 8,
+      "file": "pt-passage-ipvv-chunkI-k1-9-1-10-kriya-karyakarana-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkJ-k1.11-kartapi-kalpita.md",
+      "immutable_id": "pt:pid:ipvv:5b225fdbeb52",
+      "locator": "chunkJ-k1.11-kartapi-kalpita.md",
+      "order": 9,
+      "file": "pt-passage-ipvv-chunkJ-k1-11-kartapi-kalpita-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkK-purvapaksa-siddhanta.md",
+      "immutable_id": "pt:pid:ipvv:d91580075602",
+      "locator": "chunkK-purvapaksa-siddhanta.md",
+      "order": 10,
+      "file": "pt-passage-ipvv-chunkK-purvapaksa-siddhanta-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkL-memory-error-sankaranandana.md",
+      "immutable_id": "pt:pid:ipvv:1080e755a40d",
+      "locator": "chunkL-memory-error-sankaranandana.md",
+      "order": 11,
+      "file": "pt-passage-ipvv-chunkL-memory-error-sankaranandana-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkM-jnanadhikara-reflexion-core.md",
+      "immutable_id": "pt:pid:ipvv:1c5f25051297",
+      "locator": "chunkM-jnanadhikara-reflexion-core.md",
+      "order": 12,
+      "file": "pt-passage-ipvv-chunkM-jnanadhikara-reflexion-core-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkN-close-mahesvara-saktis.md",
+      "immutable_id": "pt:pid:ipvv:8c652bfd72be",
+      "locator": "chunkN-close-mahesvara-saktis.md",
+      "order": 13,
+      "file": "pt-passage-ipvv-chunkN-close-mahesvara-saktis-md.json",
+      "vol": "M00020",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-A-caturtho-vimarsa-aham.md",
+      "immutable_id": "pt:pid:ipvv:298f931229c5",
+      "locator": "chunkV2-A-caturtho-vimarsa-aham.md",
+      "order": 14,
+      "file": "pt-passage-ipvv-chunkV2-A-caturtho-vimarsa-aham-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-B-sahajavimarsa-prakasavimarsa.md",
+      "immutable_id": "pt:pid:ipvv:d5a036b8cfae",
+      "locator": "chunkV2-B-sahajavimarsa-prakasavimarsa.md",
+      "order": 15,
+      "file": "pt-passage-ipvv-chunkV2-B-sahajavimarsa-prakasavimarsa-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-C-vistanti-ajadapramatrsiddhi.md",
+      "immutable_id": "pt:pid:ipvv:55d2fd8d1703",
+      "locator": "chunkV2-C-vistanti-ajadapramatrsiddhi.md",
+      "order": 16,
+      "file": "pt-passage-ipvv-chunkV2-C-vistanti-ajadapramatrsiddhi-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-D-pancamo-vimarsa-jnanasakti.md",
+      "immutable_id": "pt:pid:ipvv:62db0c4350bd",
+      "locator": "chunkV2-D-pancamo-vimarsa-jnanasakti.md",
+      "order": 17,
+      "file": "pt-passage-ipvv-chunkV2-D-pancamo-vimarsa-jnanasakti-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-E-pancamo-jnanasakti-k5.md",
+      "immutable_id": "pt:pid:ipvv:5c87f8b03d9b",
+      "locator": "chunkV2-E-pancamo-jnanasakti-k5.md",
+      "order": 18,
+      "file": "pt-passage-ipvv-chunkV2-E-pancamo-jnanasakti-k5-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-F-pancamo-vimarsa-k6.md",
+      "immutable_id": "pt:pid:ipvv:77c9877ab106",
+      "locator": "chunkV2-F-pancamo-vimarsa-k6.md",
+      "order": 19,
+      "file": "pt-passage-ipvv-chunkV2-F-pancamo-vimarsa-k6-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-G-pancamo-vimarsa-k7-10.md",
+      "immutable_id": "pt:pid:ipvv:76925ca9ae3c",
+      "locator": "chunkV2-G-pancamo-vimarsa-k7-10.md",
+      "order": 20,
+      "file": "pt-passage-ipvv-chunkV2-G-pancamo-vimarsa-k7-10-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-H-pancamo-vimarsa-k11-13.md",
+      "immutable_id": "pt:pid:ipvv:32b73212ceee",
+      "locator": "chunkV2-H-pancamo-vimarsa-k11-13.md",
+      "order": 21,
+      "file": "pt-passage-ipvv-chunkV2-H-pancamo-vimarsa-k11-13-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-I-pancamo-vimarsa-k14-19.md",
+      "immutable_id": "pt:pid:ipvv:22f7243d5fb9",
+      "locator": "chunkV2-I-pancamo-vimarsa-k14-19.md",
+      "order": 22,
+      "file": "pt-passage-ipvv-chunkV2-I-pancamo-vimarsa-k14-19-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-J-pancamo-vimarsa-k19-20.md",
+      "immutable_id": "pt:pid:ipvv:1c2f79595028",
+      "locator": "chunkV2-J-pancamo-vimarsa-k19-20.md",
+      "order": 23,
+      "file": "pt-passage-ipvv-chunkV2-J-pancamo-vimarsa-k19-20-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-K-pancamo-vimarsa-k20-21.md",
+      "immutable_id": "pt:pid:ipvv:5120571fe702",
+      "locator": "chunkV2-K-pancamo-vimarsa-k20-21.md",
+      "order": 24,
+      "file": "pt-passage-ipvv-chunkV2-K-pancamo-vimarsa-k20-21-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+      "immutable_id": "pt:pid:ipvv:c94153f929f7",
+      "locator": "chunkV2-L-sastho-vimarsa-smrti-apohana.md",
+      "order": 25,
+      "file": "pt-passage-ipvv-chunkV2-L-sastho-vimarsa-smrti-apohana-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-M-sastho-vimarsa-k6-7.md",
+      "immutable_id": "pt:pid:ipvv:311635b7c8a8",
+      "locator": "chunkV2-M-sastho-vimarsa-k6-7.md",
+      "order": 26,
+      "file": "pt-passage-ipvv-chunkV2-M-sastho-vimarsa-k6-7-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-N-sastho-k8-11.md",
+      "immutable_id": "pt:pid:ipvv:3b074ddbaf3b",
+      "locator": "chunkV2-N-sastho-k8-11.md",
+      "order": 27,
+      "file": "pt-passage-ipvv-chunkV2-N-sastho-k8-11-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-O-saptamo-vimarsa.md",
+      "immutable_id": "pt:pid:ipvv:3a6b22165fb5",
+      "locator": "chunkV2-O-saptamo-vimarsa.md",
+      "order": 28,
+      "file": "pt-passage-ipvv-chunkV2-O-saptamo-vimarsa-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-P-saptamo-k5-10.md",
+      "immutable_id": "pt:pid:ipvv:737b9acd8b0c",
+      "locator": "chunkV2-P-saptamo-k5-10.md",
+      "order": 29,
+      "file": "pt-passage-ipvv-chunkV2-P-saptamo-k5-10-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-Q-saptamo-k11-close.md",
+      "immutable_id": "pt:pid:ipvv:fe67055363f8",
+      "locator": "chunkV2-Q-saptamo-k11-close.md",
+      "order": 30,
+      "file": "pt-passage-ipvv-chunkV2-Q-saptamo-k11-close-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-R-astamo-vimarsa.md",
+      "immutable_id": "pt:pid:ipvv:4b0a076b32b8",
+      "locator": "chunkV2-R-astamo-vimarsa.md",
+      "order": 31,
+      "file": "pt-passage-ipvv-chunkV2-R-astamo-vimarsa-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV2-S-astamo-close-jnanadhikara.md",
+      "immutable_id": "pt:pid:ipvv:c0bb6e2715d4",
+      "locator": "chunkV2-S-astamo-close-jnanadhikara.md",
+      "order": 32,
+      "file": "pt-passage-ipvv-chunkV2-S-astamo-close-jnanadhikara-md.json",
+      "vol": "M00021",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-A-kriya-prathamo-k1-2.md",
+      "immutable_id": "pt:pid:ipvv:c4e80ddd7c72",
+      "locator": "chunkV3-A-kriya-prathamo-k1-2.md",
+      "order": 33,
+      "file": "pt-passage-ipvv-chunkV3-A-kriya-prathamo-k1-2-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-B-kriya-dvitiyo-k1-7.md",
+      "immutable_id": "pt:pid:ipvv:f4ed34831fb5",
+      "locator": "chunkV3-B-kriya-dvitiyo-k1-7.md",
+      "order": 34,
+      "file": "pt-passage-ipvv-chunkV3-B-kriya-dvitiyo-k1-7-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-C-kriya-trtiyo-k1-2.md",
+      "immutable_id": "pt:pid:ipvv:0f2c615fd2a6",
+      "locator": "chunkV3-C-kriya-trtiyo-k1-2.md",
+      "order": 35,
+      "file": "pt-passage-ipvv-chunkV3-C-kriya-trtiyo-k1-2-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-D-kriya-trtiyo-k3-8.md",
+      "immutable_id": "pt:pid:ipvv:ffdd1ee3c073",
+      "locator": "chunkV3-D-kriya-trtiyo-k3-8.md",
+      "order": 36,
+      "file": "pt-passage-ipvv-chunkV3-D-kriya-trtiyo-k3-8-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-E-kriya-trtiyo-k9-17.md",
+      "immutable_id": "pt:pid:ipvv:fe5faf794c18",
+      "locator": "chunkV3-E-kriya-trtiyo-k9-17.md",
+      "order": 37,
+      "file": "pt-passage-ipvv-chunkV3-E-kriya-trtiyo-k9-17-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-F-kriya-trtiyo-close.md",
+      "immutable_id": "pt:pid:ipvv:76c15b31b638",
+      "locator": "chunkV3-F-kriya-trtiyo-close.md",
+      "order": 38,
+      "file": "pt-passage-ipvv-chunkV3-F-kriya-trtiyo-close-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-G-kriya-caturtho-k1-11.md",
+      "immutable_id": "pt:pid:ipvv:fddc2b01cffa",
+      "locator": "chunkV3-G-kriya-caturtho-k1-11.md",
+      "order": 39,
+      "file": "pt-passage-ipvv-chunkV3-G-kriya-caturtho-k1-11-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-H-kriya-caturtho-k12-19.md",
+      "immutable_id": "pt:pid:ipvv:d4d5ffcf373f",
+      "locator": "chunkV3-H-kriya-caturtho-k12-19.md",
+      "order": 40,
+      "file": "pt-passage-ipvv-chunkV3-H-kriya-caturtho-k12-19-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-I-kriya-caturtho-close-k20-21.md",
+      "immutable_id": "pt:pid:ipvv:1d53daf62e05",
+      "locator": "chunkV3-I-kriya-caturtho-close-k20-21.md",
+      "order": 41,
+      "file": "pt-passage-ipvv-chunkV3-I-kriya-caturtho-close-k20-21-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-J-agama-prathamo-k1-7.md",
+      "immutable_id": "pt:pid:ipvv:7c8c91e90508",
+      "locator": "chunkV3-J-agama-prathamo-k1-7.md",
+      "order": 42,
+      "file": "pt-passage-ipvv-chunkV3-J-agama-prathamo-k1-7-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-K-agama-prathamo-k8-11-close.md",
+      "immutable_id": "pt:pid:ipvv:ad91d5855dde",
+      "locator": "chunkV3-K-agama-prathamo-k8-11-close.md",
+      "order": 43,
+      "file": "pt-passage-ipvv-chunkV3-K-agama-prathamo-k8-11-close-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-L-agama-dvitiyo-k1-11.md",
+      "immutable_id": "pt:pid:ipvv:1c8b0fcf15a4",
+      "locator": "chunkV3-L-agama-dvitiyo-k1-11.md",
+      "order": 44,
+      "file": "pt-passage-ipvv-chunkV3-L-agama-dvitiyo-k1-11-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-M-agama-dvitiyo-close-k12-20.md",
+      "immutable_id": "pt:pid:ipvv:f97439905c09",
+      "locator": "chunkV3-M-agama-dvitiyo-close-k12-20.md",
+      "order": 45,
+      "file": "pt-passage-ipvv-chunkV3-M-agama-dvitiyo-close-k12-20-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-N-tattva-prathamo-k1-8.md",
+      "immutable_id": "pt:pid:ipvv:419f72e00ec9",
+      "locator": "chunkV3-N-tattva-prathamo-k1-8.md",
+      "order": 46,
+      "file": "pt-passage-ipvv-chunkV3-N-tattva-prathamo-k1-8-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-O-tattva-trtiyo-k9-15.md",
+      "immutable_id": "pt:pid:ipvv:4ba20b15bd90",
+      "locator": "chunkV3-O-tattva-trtiyo-k9-15.md",
+      "order": 47,
+      "file": "pt-passage-ipvv-chunkV3-O-tattva-trtiyo-k9-15-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    },
+    {
+      "id": "pt:passage:ipvv:chunkV3-P-tattva-caturtho-close-k1-3.md",
+      "immutable_id": "pt:pid:ipvv:aad4bfd27078",
+      "locator": "chunkV3-P-tattva-caturtho-close-k1-3.md",
+      "order": 48,
+      "file": "pt-passage-ipvv-chunkV3-P-tattva-caturtho-close-k1-3-md.json",
+      "vol": "M00022",
+      "has_c1": true
+    }
+  ],
+  "not_published": [
+    {
+      "id": "pt:passage:ipvv:01_t1/upoddhata-mangala.md",
+      "chunk": "01_t1/upoddhata-mangala.md",
+      "reason": "T1 prose-gloss, no standalone L2 read",
+      "status": "T1_ONLY_NO_L2"
+    },
+    {
+      "id": "pt:passage:ipvv:01_t1/k1.1-kathamcit.md",
+      "chunk": "01_t1/k1.1-kathamcit.md",
+      "reason": "T1 prose-gloss, no standalone L2 read",
+      "status": "T1_ONLY_NO_L2"
+    },
+    {
+      "id": "pt:passage:ipvv:01_t1/purvapaksa-opening.md",
+      "chunk": "01_t1/purvapaksa-opening.md",
+      "reason": "T1 prose-gloss, no standalone L2 read",
+      "status": "T1_ONLY_NO_L2"
+    }
+  ]
+}

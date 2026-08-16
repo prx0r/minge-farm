@@ -1,0 +1,372 @@
+{
+  "essay_id": "pt:essay:ipvv:CL-3",
+  "plan_id": "pt:argument:ipvv:CL-3:plan",
+  "plan_hash": "621e325696207515",
+  "theme_id": "Order-less Support",
+  "title": "The Order-less Support of the Powers",
+  "claims": [
+    {
+      "id": "EC-001",
+      "text": "V2L-nonconstructed-I: vikalpa (conceptual construction); ahaṃ-pratyavamarśa (reflexive apprehension as \"I\"); apohana (differentiation).",
+      "role": "premise",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [
+        "pt:passage:ipvv:V2L-nonconstructed-I"
+      ],
+      "boundary": "licensed by the cited passages; does not by itself exceed them",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-002",
+      "text": "V2N-inner-appearance: the inner appearance; the constancy across memory/construction/cognition; the muktāṇava.",
+      "role": "premise",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [
+        "pt:passage:ipvv:V2N-inner-appearance"
+      ],
+      "boundary": "licensed by the cited passages; does not by itself exceed them",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-003",
+      "text": "V2O-orderless-support: pratibhā (the flashing); rūṣitā (seasoned); akrama (order-less); āśraya (support)",
+      "role": "premise",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [
+        "pt:passage:ipvv:V2O-orderless-support"
+      ],
+      "boundary": "licensed by the cited passages; does not by itself exceed them",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-004",
+      "text": "V2P-pramatr-vyapara: pramātṛ-vyāpāra (the knower's operation); the consciousness-ocean; kārikā 5.",
+      "role": "premise",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [
+        "pt:passage:ipvv:V2P-pramatr-vyapara"
+      ],
+      "boundary": "licensed by the cited passages; does not by itself exceed them",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-005",
+      "text": "V2Q-omniscient: the piśāca/āloka analysis; the omniscient; the arvāk (the limited seer).",
+      "role": "premise",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [
+        "pt:passage:ipvv:V2Q-omniscient"
+      ],
+      "boundary": "licensed by the cited passages; does not by itself exceed them",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-006",
+      "text": "V2R-mahesvarya: māheśvarya (the great-Lordship); the appearance-group; kārikā 1.",
+      "role": "premise",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [
+        "pt:passage:ipvv:V2R-mahesvarya"
+      ],
+      "boundary": "licensed by the cited passages; does not by itself exceed them",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-007",
+      "text": "V2S-unity-mahesvarya: the unity (kārikā 10); the dealing (vyavahāra); the māheśvarya (kārikā 11); the puruṣa.",
+      "role": "premise",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [
+        "pt:passage:ipvv:V2S-unity-mahesvarya"
+      ],
+      "boundary": "licensed by the cited passages; does not by itself exceed them",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-008",
+      "text": "V3F-grace: the fourfold work (dīkṣā, dhyāna, jñāna, bhāvanā); the grace; the prāṇa-as-\"I.\"",
+      "role": "premise",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [
+        "pt:passage:ipvv:V3F-grace"
+      ],
+      "boundary": "licensed by the cited passages; does not by itself exceed them",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-009",
+      "text": "V3I-difference-real: anirvācya (un-explainable); the will-to-do (cikīrṣālakṣaṇa parāmarśa); the difference.",
+      "role": "premise",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [
+        "pt:passage:ipvv:V3I-difference-real"
+      ],
+      "boundary": "licensed by the cited passages; does not by itself exceed them",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-010",
+      "text": "Order-less Support",
+      "role": "conclusion",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [],
+      "boundary": "This argument establishes a structural requirement; it does not by itself establish the stronger identity of the support with a universal Self.",
+      "type": "EVIDENCED"
+    },
+    {
+      "id": "EC-011",
+      "text": "The argument therefore establishes a structural requirement, not yet the full metaphysical identity claimed elsewhere in the work.",
+      "role": "QUALIFICATION",
+      "argument_id": "pt:argument:ipvv:CL-3",
+      "passage_ids": [],
+      "boundary": "the honest limit, visible to the reader",
+      "type": "SYNTHETIC"
+    }
+  ],
+  "sentences": [
+    {
+      "id": "S-001",
+      "text": "V2L-nonconstructed-I: vikalpa (conceptual construction); ahaṃ-pratyavamarśa (reflexive apprehension as \"I\"); apohana (differentiation).",
+      "claim_ids": [
+        "EC-001"
+      ],
+      "provenance_relation": "PARAPHRASE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [
+        "pt:passage:ipvv:V2L-nonconstructed-I"
+      ],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-002",
+      "text": "V2N-inner-appearance: the inner appearance; the constancy across memory/construction/cognition; the muktāṇava.",
+      "claim_ids": [
+        "EC-002"
+      ],
+      "provenance_relation": "PARAPHRASE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [
+        "pt:passage:ipvv:V2N-inner-appearance"
+      ],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-003",
+      "text": "V2O-orderless-support: pratibhā (the flashing); rūṣitā (seasoned); akrama (order-less); āśraya (support)",
+      "claim_ids": [
+        "EC-003"
+      ],
+      "provenance_relation": "PARAPHRASE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [
+        "pt:passage:ipvv:V2O-orderless-support"
+      ],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-004",
+      "text": "V2P-pramatr-vyapara: pramātṛ-vyāpāra (the knower's operation); the consciousness-ocean; kārikā 5.",
+      "claim_ids": [
+        "EC-004"
+      ],
+      "provenance_relation": "PARAPHRASE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [
+        "pt:passage:ipvv:V2P-pramatr-vyapara"
+      ],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-005",
+      "text": "V2Q-omniscient: the piśāca/āloka analysis; the omniscient; the arvāk (the limited seer).",
+      "claim_ids": [
+        "EC-005"
+      ],
+      "provenance_relation": "PARAPHRASE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [
+        "pt:passage:ipvv:V2Q-omniscient"
+      ],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-006",
+      "text": "V2R-mahesvarya: māheśvarya (the great-Lordship); the appearance-group; kārikā 1.",
+      "claim_ids": [
+        "EC-006"
+      ],
+      "provenance_relation": "PARAPHRASE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [
+        "pt:passage:ipvv:V2R-mahesvarya"
+      ],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-007",
+      "text": "V2S-unity-mahesvarya: the unity (kārikā 10); the dealing (vyavahāra); the māheśvarya (kārikā 11); the puruṣa.",
+      "claim_ids": [
+        "EC-007"
+      ],
+      "provenance_relation": "PARAPHRASE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [
+        "pt:passage:ipvv:V2S-unity-mahesvarya"
+      ],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-008",
+      "text": "V3F-grace: the fourfold work (dīkṣā, dhyāna, jñāna, bhāvanā); the grace; the prāṇa-as-\"I.\"",
+      "claim_ids": [
+        "EC-008"
+      ],
+      "provenance_relation": "PARAPHRASE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [
+        "pt:passage:ipvv:V3F-grace"
+      ],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-009",
+      "text": "V3I-difference-real: anirvācya (un-explainable); the will-to-do (cikīrṣālakṣaṇa parāmarśa); the difference.",
+      "claim_ids": [
+        "EC-009"
+      ],
+      "provenance_relation": "PARAPHRASE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [
+        "pt:passage:ipvv:V3I-difference-real"
+      ],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-010",
+      "text": "Order-less Support",
+      "claim_ids": [
+        "EC-010"
+      ],
+      "provenance_relation": "INFERENCE",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    },
+    {
+      "id": "S-011",
+      "text": "The argument therefore establishes a structural requirement, not yet the full metaphysical identity claimed elsewhere in the work.",
+      "claim_ids": [
+        "EC-011"
+      ],
+      "provenance_relation": "QUALIFICATION",
+      "argument_ids": [
+        "pt:argument:ipvv:CL-3"
+      ],
+      "c1_ids": [],
+      "passage_ids": [],
+      "philological_proof_ids": [],
+      "verification": {
+        "structural": "PASS",
+        "semantic": "PASS",
+        "boundary_preserved": true
+      },
+      "status": "VERIFIED"
+    }
+  ],
+  "verification_summary": {
+    "total": 11,
+    "verified": 11,
+    "rejected": 0,
+    "rejection_reasons": []
+  }
+}

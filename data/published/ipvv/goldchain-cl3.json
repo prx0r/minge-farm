@@ -1,0 +1,319 @@
+{
+  "chain_id": "gc:ipvv:cl-3",
+  "work_id": "ipvv",
+  "theme_id": "CL-3",
+  "nodes": [
+    {
+      "id": "V2-O-saptamo-vimarsa:l0",
+      "layer": "L0",
+      "status": "P0",
+      "evidence": "L0 proof pp:v2-o-saptamo-vimarsa:p0",
+      "depends_on": [
+        "V2-O-saptamo-vimarsa:sanskrit"
+      ],
+      "philological_proof": "pp:v2-o-saptamo-vimarsa:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-O-saptamo-vimarsa:sanskrit",
+      "layer": "SANSKRIT",
+      "status": "PROVED",
+      "evidence": "78f72e74f59e35c7d6124f4ceb76f7744d36a0624580f14d8f2fce330ce2c363",
+      "depends_on": [],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-S-astamo-close-jnanadhikara:l0",
+      "layer": "L0",
+      "status": "P0",
+      "evidence": "L0 proof pp:v2-s-astamo-close-jnanadhikara:p0",
+      "depends_on": [
+        "V2-S-astamo-close-jnanadhikara:sanskrit"
+      ],
+      "philological_proof": "pp:v2-s-astamo-close-jnanadhikara:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-S-astamo-close-jnanadhikara:sanskrit",
+      "layer": "SANSKRIT",
+      "status": "PROVED",
+      "evidence": "9f61af819e2b8486a6f409fed92a23c32ac1e8bd1b1c5ff5a91bf91122792271",
+      "depends_on": [],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-P-saptamo-k5-10:l0",
+      "layer": "L0",
+      "status": "P0",
+      "evidence": "L0 proof pp:v2-p-saptamo-k5-10:p0",
+      "depends_on": [
+        "V2-P-saptamo-k5-10:sanskrit"
+      ],
+      "philological_proof": "pp:v2-p-saptamo-k5-10:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-P-saptamo-k5-10:sanskrit",
+      "layer": "SANSKRIT",
+      "status": "PROVED",
+      "evidence": "a05344694f664c38c0877cc851cb70ce837d7c3d16c79a3e6021f4aadb31a01a",
+      "depends_on": [],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-L-sastho-vimarsa-smrti-apohana:l0",
+      "layer": "L0",
+      "status": "P0",
+      "evidence": "L0 proof pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
+      "depends_on": [
+        "V2-L-sastho-vimarsa-smrti-apohana:sanskrit"
+      ],
+      "philological_proof": "pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-L-sastho-vimarsa-smrti-apohana:sanskrit",
+      "layer": "SANSKRIT",
+      "status": "PROVED",
+      "evidence": "ccbc00648fe27f79c277b24a3020806b6ce88886ac4c80cb8aac5cb974deeb6e",
+      "depends_on": [],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-O-saptamo-vimarsa:l2",
+      "layer": "L2",
+      "status": "SUPPORTED",
+      "evidence": "L2 READ of V2-O-saptamo-vimarsa",
+      "depends_on": [
+        "V2-O-saptamo-vimarsa:l0"
+      ],
+      "philological_proof": "pp:v2-o-saptamo-vimarsa:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-O-saptamo-vimarsa:l200",
+      "layer": "L200",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "L200 audit of V2-O-saptamo-vimarsa",
+      "depends_on": [
+        "V2-O-saptamo-vimarsa:l2"
+      ],
+      "philological_proof": "pp:v2-o-saptamo-vimarsa:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-O-saptamo-vimarsa:c1",
+      "layer": "C1",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "C1 commentary of V2-O-saptamo-vimarsa",
+      "depends_on": [
+        "V2-O-saptamo-vimarsa:l200"
+      ],
+      "philological_proof": "pp:v2-o-saptamo-vimarsa:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-S-astamo-close-jnanadhikara:l2",
+      "layer": "L2",
+      "status": "SUPPORTED",
+      "evidence": "L2 READ of V2-S-astamo-close-jnanadhikara",
+      "depends_on": [
+        "V2-S-astamo-close-jnanadhikara:l0"
+      ],
+      "philological_proof": "pp:v2-s-astamo-close-jnanadhikara:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-S-astamo-close-jnanadhikara:l200",
+      "layer": "L200",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "L200 audit of V2-S-astamo-close-jnanadhikara",
+      "depends_on": [
+        "V2-S-astamo-close-jnanadhikara:l2"
+      ],
+      "philological_proof": "pp:v2-s-astamo-close-jnanadhikara:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-S-astamo-close-jnanadhikara:c1",
+      "layer": "C1",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "C1 commentary of V2-S-astamo-close-jnanadhikara",
+      "depends_on": [
+        "V2-S-astamo-close-jnanadhikara:l200"
+      ],
+      "philological_proof": "pp:v2-s-astamo-close-jnanadhikara:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-P-saptamo-k5-10:l2",
+      "layer": "L2",
+      "status": "SUPPORTED",
+      "evidence": "L2 READ of V2-P-saptamo-k5-10",
+      "depends_on": [
+        "V2-P-saptamo-k5-10:l0"
+      ],
+      "philological_proof": "pp:v2-p-saptamo-k5-10:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-P-saptamo-k5-10:l200",
+      "layer": "L200",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "L200 audit of V2-P-saptamo-k5-10",
+      "depends_on": [
+        "V2-P-saptamo-k5-10:l2"
+      ],
+      "philological_proof": "pp:v2-p-saptamo-k5-10:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-P-saptamo-k5-10:c1",
+      "layer": "C1",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "C1 commentary of V2-P-saptamo-k5-10",
+      "depends_on": [
+        "V2-P-saptamo-k5-10:l200"
+      ],
+      "philological_proof": "pp:v2-p-saptamo-k5-10:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-L-sastho-vimarsa-smrti-apohana:l2",
+      "layer": "L2",
+      "status": "SUPPORTED",
+      "evidence": "L2 READ of V2-L-sastho-vimarsa-smrti-apohana",
+      "depends_on": [
+        "V2-L-sastho-vimarsa-smrti-apohana:l0"
+      ],
+      "philological_proof": "pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-L-sastho-vimarsa-smrti-apohana:l200",
+      "layer": "L200",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "L200 audit of V2-L-sastho-vimarsa-smrti-apohana",
+      "depends_on": [
+        "V2-L-sastho-vimarsa-smrti-apohana:l2"
+      ],
+      "philological_proof": "pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "V2-L-sastho-vimarsa-smrti-apohana:c1",
+      "layer": "C1",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "C1 commentary of V2-L-sastho-vimarsa-smrti-apohana",
+      "depends_on": [
+        "V2-L-sastho-vimarsa-smrti-apohana:l200"
+      ],
+      "philological_proof": "pp:v2-l-sastho-vimarsa-smrti-apohana:p0",
+      "review_state": "machine"
+    },
+    {
+      "id": "theme:cl3",
+      "layer": "THEME",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "Order-less Support / the order-less knower",
+      "depends_on": [
+        "V2-O-saptamo-vimarsa:c1",
+        "V2-S-astamo-close-jnanadhikara:c1",
+        "V2-P-saptamo-k5-10:c1",
+        "V2-L-sastho-vimarsa-smrti-apohana:c1"
+      ],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "arg:cl3",
+      "layer": "ARGUMENT",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "B-STRUCT argument, 9 premises",
+      "depends_on": [
+        "theme:cl3"
+      ],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "aif:cl3",
+      "layer": "AIF",
+      "status": "SUPPORTED",
+      "evidence": "AIF graph, 0 info nodes",
+      "depends_on": [
+        "arg:cl3"
+      ],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "plan:cl3",
+      "layer": "ESSAYPLAN",
+      "status": "SUPPORTED",
+      "evidence": "EssayPlan: 'Order-less Support...'",
+      "depends_on": [
+        "aif:cl3"
+      ],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "ec:1",
+      "layer": "ESSAYCLAIM",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "EVIDENCED: V2L-nonconstructed-I: vikalpa (conceptual construc...",
+      "depends_on": [
+        "plan:cl3"
+      ],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "ec:2",
+      "layer": "ESSAYCLAIM",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "EVIDENCED: V2N-inner-appearance: the inner appearance; the co...",
+      "depends_on": [
+        "plan:cl3"
+      ],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "ec:3",
+      "layer": "ESSAYCLAIM",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "EVIDENCED: V2O-orderless-support: pratibhā (the flashing); rū...",
+      "depends_on": [
+        "plan:cl3"
+      ],
+      "philological_proof": null,
+      "review_state": "machine"
+    },
+    {
+      "id": "ec:4",
+      "layer": "ESSAYCLAIM",
+      "status": "MACHINE_PROPOSED",
+      "evidence": "EVIDENCED: V2P-pramatr-vyapara: pramātṛ-vyāpāra (the knower's...",
+      "depends_on": [
+        "plan:cl3"
+      ],
+      "philological_proof": null,
+      "review_state": "machine"
+    }
+  ],
+  "certificate": {
+    "SOURCE_INTEGRITY": "PROVED",
+    "MORPHOLOGY": "SUPPORTED",
+    "LEXICAL_SENSE": "UNCHECKED",
+    "INTERPRETATION": "MACHINE_PROPOSED",
+    "INFERENCE": "MACHINE_PROPOSED",
+    "ESSAY_CLAIM": "MACHINE_PROPOSED",
+    "proof_level": "P0"
+  }
+}

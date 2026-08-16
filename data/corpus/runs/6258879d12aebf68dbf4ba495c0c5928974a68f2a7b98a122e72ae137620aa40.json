@@ -1,0 +1,34 @@
+{
+  "step": "verify",
+  "run_signature": "6258879d12aebf68dbf4ba495c0c5928974a68f2a7b98a122e72ae137620aa40",
+  "out_hash": "f0c2d63ae70034871846d8a413e6c7cba6067f43650c1f123ee56bd997edd056",
+  "gold_hash": "db96a82248435d47e8c78fb4758ef0593e1837f38f5eb86d025656d45742e9dc",
+  "code_sha": "8ca20e686138d471cab3ea838975cd7afc28abd1dd79e8985af306b005eb6d06",
+  "config_sha": "c5ba7bf1bfb48c5181d0505f7ec6634a00966ed998392b39fb341b564dd7ceb5",
+  "config": {
+    "method": "verify.py",
+    "candidate": "Homage to Shiva"
+  },
+  "metrics": {
+    "deterministic_gate": "PASS"
+  },
+  "raw_outputs": [],
+  "git": {
+    "commit": "",
+    "diff": ""
+  },
+  "ts": "2026-08-16T13:46:08.288977+00:00",
+  "nanopublication": {
+    "assertion": "source 'śivāya namaḥ' → candidate 'Homage to Shiva' is PASS (all checks pass)",
+    "evidence": {
+      "code": "ECO:0000203",
+      "artifact": "run:6258879d12ae"
+    },
+    "provenance": {
+      "run_signature": "6258879d12aebf68dbf4ba495c0c5928974a68f2a7b98a122e72ae137620aa40",
+      "out_hash": "f0c2d63ae70034871846d8a413e6c7cba6067f43650c1f123ee56bd997edd056",
+      "generated_by": "sanskritbenchy/run_recorder.py",
+      "ts": "2026-08-16T13:46:08.289063+00:00"
+    }
+  }
+}

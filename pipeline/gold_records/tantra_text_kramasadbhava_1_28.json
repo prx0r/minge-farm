@@ -1,0 +1,41 @@
+{
+  "passage_id": "tantra:text:kramasadbhava:1.28",
+  "work_id": "kramasadbhava",
+  "location": {
+    "chapter": 1,
+    "verse": 28
+  },
+  "source": {
+    "source_edition": "Dyczkowski ed., Muktabodha (NGMPP A 209/23)",
+    "source_file": "/root/projects/sanskritree/translations/01_t1_working/kramasadbhava_patala1_pass1.md",
+    "source_text": "namo'stu devi ādau ca madhye tubhyaṃ namo'stu te | etat stutipadaṃ kṛtvā tathedaṃ vākyamabravīt —"
+  },
+  "stages": {
+    "T1": {
+      "close_translation": "\"[and]-homage-be-to-you, O-Devī, at-the-first, indeed, [and]-in-the-midst, to-you-homage-be-to-you: [and]-having-made-this-praise-step (stuti-pada), [and]-thus-this-speech-he-told:\" \"[Bhairava:] In-this-great-terrible-seat (pīṭha), crowded-with-the-heroes-of-heroes (*?), why-are-they-come, all, the-sixty-four-great-mighty (catuḥṣaṣṭi-mahābalā), O-supreme-mistress: the-yoginīs, the-heroes-of-heroes (*?), [and]-the-hero-born (vīrajāḥ), O-supreme-mistress, [and]-the-devoted-to-your-worship, the-great-yoga-lords (mahāyogendra), the-eager (*?): [and]-the-always-joined, the-rite-knowers (vidhāna-jña), all, [and]-the-foremost-in-all (*?): [and]-delighting-in-your-service (*?), [and]-the-exceedingly-glad-faced (*?):\"",
+      "reader_draft": "",
+      "flags": [],
+      "notes": [],
+      "lexical_decisions": [],
+      "grammatical_notes": [],
+      "parallels": [],
+      "time_place_context": {},
+      "stage": "T1"
+    }
+  },
+  "audit": {},
+  "lineage": [
+    {
+      "stage": "T1",
+      "created_by": "t1-ingest",
+      "derived_from": null,
+      "supersedes": null
+    }
+  ],
+  "policy": {
+    "translation_contract": "1.0.0",
+    "style_guide": "1.0.0",
+    "schema": "1.0.0"
+  },
+  "review_status": "T1"
+}

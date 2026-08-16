@@ -1,0 +1,43 @@
+{
+  "passage_id": "tantra:text:kramasadbhava:1.10",
+  "work_id": "kramasadbhava",
+  "location": {
+    "chapter": 1,
+    "verse": 10
+  },
+  "source": {
+    "source_edition": "Dyczkowski ed., Muktabodha (NGMPP A 209/23)",
+    "source_file": "/root/projects/sanskritree/translations/01_t1_working/kramasadbhava_patala1_pass1.md",
+    "source_text": "namaḥ kṛtāntadurdāntakālasya karaṇodyate | namo māyādivaibhavyai viśvajṛmbhe rakṣa me —"
+  },
+  "stages": {
+    "T1": {
+      "close_translation": "\"[and]-homage, O-the-effecting-of-the-...-the-...(*?) [X: \"kṛtānta-durdānta-kālasya-karaṇodyate\" — the time of the end], [and]-homage-to-the-māyā-and-the-rest-powered (māyādi-vaibhavyai), O-world-gaping (viśvajṛmbhe), protect-me:\"",
+      "reader_draft": "",
+      "flags": [
+        "X"
+      ],
+      "notes": [],
+      "lexical_decisions": [],
+      "grammatical_notes": [],
+      "parallels": [],
+      "time_place_context": {},
+      "stage": "T1"
+    }
+  },
+  "audit": {},
+  "lineage": [
+    {
+      "stage": "T1",
+      "created_by": "t1-ingest",
+      "derived_from": null,
+      "supersedes": null
+    }
+  ],
+  "policy": {
+    "translation_contract": "1.0.0",
+    "style_guide": "1.0.0",
+    "schema": "1.0.0"
+  },
+  "review_status": "T1"
+}

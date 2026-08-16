@@ -1,0 +1,63 @@
+PĀṬALA STAGE-2 CLUSTERS — editorial report (V2/V3 thematic C1s)
+============================================================
+MACHINE PROPOSALS. The editor accepts/merges/splits these into THEMES.
+
+9 clusters from 35 V2/V3 C1s
+
+CL-3: 9 members, coherence 3.5556
+    - V2L-nonconstructed-I
+    - V2N-inner-appearance
+    - V2O-orderless-support
+    - V2P-pramatr-vyapara
+    - V2Q-omniscient
+    - V2R-mahesvarya
+    - V2S-unity-mahesvarya
+    - V3F-grace
+    - V3I-difference-real
+
+CL-4: 9 members, coherence 3.1111
+    - V2M-descent-states
+    - V3C-one-light
+    - V3D-synthesis
+    - V3E-error
+    - V3I-difference-real
+    - V3J-agama-sivatattva
+    - V3K-kancukas
+    - V3L-knowers-malas
+    - V3M-states
+
+CL-1: 5 members, coherence 3.4
+    - V2D-jnanasakti
+    - V2E-external-inferred
+    - V2F-other-minds
+    - V2G-dream-inversion
+    - V3F-grace
+
+CL-2: 4 members, coherence 3.5
+    - V2H-vimarsa-paravak
+    - V2I-sphuratta
+    - V2J-samskara
+    - V2K-vacakasphota
+
+CL-7: 4 members, coherence 3.5
+    - V3F-grace
+    - V3N-one-lord-many
+    - V3O-bond-liberation
+    - V3P-lover-union
+
+CL-0: 3 members, coherence 3.6667
+    - V2A-memory-lords-power
+    - V2B-pastness-svasamvitti
+    - V2C-ajadapramatr
+
+CL-8: 2 members, coherence 1.0
+    - V3G-causality
+    - V3H-inference-across-knowers
+
+CL-5: 1 members, coherence 0.0
+    - V3A-timeless-order
+
+CL-6: 1 members, coherence 0.0
+    - V3B-bhedabheda
+
+V1 block: 28 C1s — the upoddhata/purvapaksa dialectic; handle editorially.

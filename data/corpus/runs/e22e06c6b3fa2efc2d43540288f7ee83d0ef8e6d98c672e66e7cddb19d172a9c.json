@@ -1,0 +1,37 @@
+{
+  "step": "verify",
+  "run_signature": "e22e06c6b3fa2efc2d43540288f7ee83d0ef8e6d98c672e66e7cddb19d172a9c",
+  "out_hash": "dd8651234d9dc561f36cede4fa1d589f00b494578cb8762a6e8f14ab4cc49f92",
+  "gold_hash": "ceb680979532062bc6d54c6ddba6d3fe317270cb9c1bf41ab08c8a01a415fafd",
+  "code_sha": "7d36fcebe4a7866147d3cd5ab396060763a04bbb3eb420fcbd35a3b7347022c8",
+  "config_sha": "c7330c2ab06787ed559818cbb8ad758a2d5fc73029892d9f302192eb3b1866bf",
+  "config": {
+    "method": "verify.py",
+    "candidate": "The purple elephant dances on the moon",
+    "ref_gold": "Homage to Shiva"
+  },
+  "metrics": {
+    "deterministic_gate": "PASS",
+    "gold_chrF": 0.1538,
+    "gold_ok": false
+  },
+  "raw_outputs": [],
+  "git": {
+    "commit": "",
+    "diff": ""
+  },
+  "ts": "2026-08-16T13:47:32.377674+00:00",
+  "nanopublication": {
+    "assertion": "source 'śivāya namaḥ' → candidate 'The purple elephant dances on the moon' is PASS (all checks pass)",
+    "evidence": {
+      "code": "ECO:0000203",
+      "artifact": "run:e22e06c6b3fa"
+    },
+    "provenance": {
+      "run_signature": "e22e06c6b3fa2efc2d43540288f7ee83d0ef8e6d98c672e66e7cddb19d172a9c",
+      "out_hash": "dd8651234d9dc561f36cede4fa1d589f00b494578cb8762a6e8f14ab4cc49f92",
+      "generated_by": "sanskritbenchy/run_recorder.py",
+      "ts": "2026-08-16T13:47:32.377715+00:00"
+    }
+  }
+}

@@ -1,0 +1,255 @@
+{
+  "schema": "sanskritbenchy.manifest.v1",
+  "description": "The machine resolver for the sanskritbenchy Sanskrit-benchmark science project. Every doc/script/kernel -> id + owner + validator.",
+  "date": "2026-08-16",
+  "docs": {
+    "README.md": {
+      "id": "sb:readme",
+      "owner": "science-lab",
+      "role": "the project index",
+      "validator": "check.py --refs"
+    },
+    "VISION.md": {
+      "id": "sb:vision",
+      "owner": "science-lab",
+      "role": "the goal + vision (north star): a COMET/ML, school+period-conditioned Sanskrit benchmark",
+      "validator": "check.py --refs"
+    },
+    "GOALS.md": {
+      "id": "sb:goals",
+      "owner": "science-lab",
+      "role": "the build-path roadmap (Phase B\u2192C\u2192A\u2192D)",
+      "validator": "check.py --refs"
+    },
+    "repos/README.md": {
+      "id": "sb:repos",
+      "owner": "science-lab",
+      "role": "the adopted MT-metrics toolkits (COMET, MTME, MQM, span-meta-eval)",
+      "validator": "check.py --refs"
+    },
+    "research/SCIENCE-LAB-VISION.md": {
+      "id": "sb:research:vision",
+      "owner": "science-lab",
+      "role": "the science-lab vision",
+      "validator": "check.py --refs"
+    },
+    "research/VISION-COMET-SCHOOL-PERIOD-BENCHMARK.md": {
+      "id": "sb:research:comet",
+      "owner": "science-lab",
+      "role": "the COMET + school/period benchmark research + build path",
+      "validator": "check.py --refs"
+    },
+    "research/PROOF-OF-TRANSLATION.md": {
+      "id": "sb:research:proof",
+      "owner": "science-lab",
+      "role": "the proof architecture + verified arXiv literature",
+      "validator": "check.py --refs"
+    },
+    "research/MITRASAMGRAHA.md": {
+      "id": "sb:research:mitra",
+      "owner": "science-lab",
+      "role": "the gold + eval harness + first results",
+      "validator": "check.py --refs"
+    },
+    "research/SANSKRIT-BENCHMARKS.md": {
+      "id": "sb:research:landscape",
+      "owner": "science-lab",
+      "role": "the verified benchmark landscape",
+      "validator": "check.py --refs"
+    },
+    "research/DEEP-DIVE-COMET-CRYPTO-VERIFICATION.md": {
+      "id": "sb:research:deepdive-comet-crypto",
+      "owner": "science-lab",
+      "role": "citation-verified deep-dive: COMET/ML translation verification + cryptographic proofs/commitments for translations (arXiv + GitHub live-fetched)",
+      "validator": "check.py --refs"
+    },
+    "research/HF-SANSKRIT-LORA-PERSONA-SURVEY.md": {
+      "id": "sb:research:hf-lora-persona",
+      "owner": "science-lab",
+      "role": "verified HF + research survey: Sanskrit style/persona translation, LoRA adapters, lemmatization (ByT5/Vidyut/CDSL/DCS), licensing, multi-LoRA serving",
+      "validator": "check.py --refs"
+    },
+    "hermes/README.md": {
+      "id": "sb:hermes:guide",
+      "owner": "science-lab",
+      "role": "how the lab calls hermes (verified working): model client, the validation-proof unlock, how to run it",
+      "validator": "check.py --refs"
+    },
+    "hermes/HERMES-AGENT-README.md": {
+      "id": "sb:hermes:agent-readme",
+      "owner": "science-lab",
+      "role": "the bundled Hermes Agent readme (Nous Research, v0.20.1)",
+      "validator": "check.py --refs"
+    },
+    "research/HOW-WE-BEAT-AND-IMPROVE-THE-BENCHMARK.md": {
+      "id": "sb:research:how-we-beat",
+      "owner": "science-lab",
+      "role": "how we provably beat the frontier benchmarks (WMT meta-eval tau) + the benchmark is improvable (metric/gold/split/data/proof axes) + the imported S\u0101mayik/Itih\u0101sa datasets",
+      "validator": "check.py --refs"
+    },
+    "AGENT-ORCHESTRATION.md": {
+      "id": "sb:orchestration",
+      "owner": "science-lab",
+      "role": "how a hermes agent runs the lab autonomously (kanban + cron + skills + run.py/watchdog)",
+      "validator": "check.py --refs"
+    },
+    "skills/sanskrit-benchy/SKILL.md": {
+      "id": "sb:skill:driver",
+      "owner": "science-lab",
+      "role": "the hermes lab-driver skill (command map + run loop + honest rules)",
+      "validator": "check.py --refs"
+    },
+    "HERMES-MCP-API.md": {
+      "id": "sb:mcp-api",
+      "owner": "science-lab",
+      "role": "the hermes MCP/API interface + recipes for driving the lab",
+      "validator": "check.py --refs"
+    },
+    "research/AGENTIC-SCIENCE-MECHANISMS.md": {
+      "id": "sb:research:agentic-mechs",
+      "owner": "science-lab",
+      "role": "the bulletproof agentic-science + reproducibility mechanisms we steal (verified)",
+      "validator": "check.py --refs"
+    },
+    "research/LEGITIMATE-SANSKRIT-BENCHMARK.md": {
+      "id": "sb:research:legit-benchmark",
+      "owner": "science-lab",
+      "role": "the legitimate-benchmark design: the 15-step recipe applied (WMT/FLORES/MTME), status per step, honest gaps",
+      "validator": "check.py --refs"
+    },
+    "AGENTS.md": {
+      "id": "sb:agents",
+      "owner": "all",
+      "role": "the governing file: the ONE RULE + the deterministic anti-mess standard (timestamped, logged, content-addressed, registered)",
+      "validator": "check.py --refs"
+    },
+    "research/HERMES-VERIFICATION-ARCHITECTURE.md": {
+      "id": "sb:research:hermes-verif",
+      "owner": "science-lab",
+      "role": "how every hermes feature (kanban swarm/review-gates, goals, cron, memory, MCP, hooks, moa) enforces the crypto/provenance anti-hallucination layer",
+      "validator": "check.py --refs"
+    }
+  },
+  "implementation": {
+    "pipeline/sanskrit_gold.py": {
+      "id": "sb:kernel:gold",
+      "owner": "science-lab",
+      "role": "the fixed gold control (5601 exemplars, tradition-tagged)",
+      "validator": "run: PYTHONPATH=. python3 pipeline/sanskrit_gold.py"
+    },
+    "pipeline/experiment_lab.py": {
+      "id": "sb:kernel:exp",
+      "owner": "science-lab",
+      "role": "the experiment lab + registry + sweep",
+      "validator": "run: python3 pipeline/experiment_lab.py --report"
+    },
+    "pipeline/translation_proof.py": {
+      "id": "sb:kernel:proof",
+      "owner": "science-lab",
+      "role": "the deterministic proof gate",
+      "validator": "run: verify_translation"
+    },
+    "pipeline/hypothesis_lab.py": {
+      "id": "sb:kernel:hypothesis",
+      "owner": "science-lab",
+      "role": "the hypothesis loop",
+      "validator": "run: python3 pipeline/hypothesis_lab.py --propose"
+    },
+    "pipeline/validate_benchmark.py": {
+      "id": "sb:kernel:validate",
+      "owner": "science-lab",
+      "role": "THE meta-eval: Kendall's tau of each metric vs judge",
+      "validator": "run: python3 pipeline/validate_benchmark.py --dry-run"
+    },
+    "pipeline/comet_scorer.py": {
+      "id": "sb:kernel:comet",
+      "owner": "science-lab",
+      "role": "the learned-metric (COMET) adapter (Phase B)",
+      "validator": "run: python3 pipeline/comet_scorer.py"
+    },
+    "pipeline/model.py": {
+      "id": "sb:kernel:model",
+      "owner": "science-lab",
+      "role": "the hermes model client",
+      "validator": "import"
+    },
+    "tools/sanskrit_benchmark.py": {
+      "id": "sb:tool:benchmark",
+      "owner": "science-lab",
+      "role": "the per-school \u00d7 per-period leaderboard + cost router",
+      "validator": "run: python3 tools/sanskrit_benchmark.py --report"
+    },
+    "tools/eval_mitrasamgraha.py": {
+      "id": "sb:tool:eval",
+      "owner": "science-lab",
+      "role": "the Mitrasamgraha eval harness",
+      "validator": "run: python3 tools/eval_mitrasamgraha.py --dry-run"
+    },
+    "pipeline/frontier_gold.py": {
+      "id": "sb:kernel:frontier_gold",
+      "owner": "science-lab",
+      "role": "imports + loads the frontier benchmark datasets (S\u0101mayik 2417, Itih\u0101sa 11721) as external gold for the meta-eval",
+      "validator": "run: PYTHONPATH=. python3 pipeline/frontier_gold.py"
+    },
+    "agent/run.py": {
+      "id": "sb:agent:run",
+      "owner": "science-lab",
+      "role": "the agent-run orchestrator: any lab step (validate/eval/hypothesis/proof/report/watchdog), kanban-aware, logs every run",
+      "validator": "run: python3 agent/run.py --step proof --source x --candidate y"
+    },
+    "agent/watchdog.py": {
+      "id": "sb:agent:watchdog",
+      "owner": "science-lab",
+      "role": "the autonomous watchdog: validate\u2192hypothesize\u2192report cycle, logged, box-safe",
+      "validator": "run: python3 agent/watchdog.py --dry-run"
+    },
+    "pipeline/run_recorder.py": {
+      "id": "sb:kernel:run_recorder",
+      "owner": "science-lab",
+      "role": "content-addressed run records + nanopublication triples (provenance ledger)",
+      "validator": "run: PYTHONPATH=. python3 pipeline/run_recorder.py"
+    },
+    "agent/audit.py": {
+      "id": "sb:agent:audit",
+      "owner": "science-lab",
+      "role": "the golden-file audit (recompute on fixed gold, fail on mismatch) \u2014 the executable ONE RULE",
+      "validator": "run: PYTHONPATH=. python3 agent/audit.py --list"
+    },
+    "agent/paper_build.py": {
+      "id": "sb:agent:paper",
+      "owner": "science-lab",
+      "role": "number-inject paper build (metrics from run records \u2192 .tex \u2192 PDF)",
+      "validator": "run: PYTHONPATH=. python3 agent/paper_build.py"
+    },
+    "pipeline/sanskrit_texts.py": {
+      "id": "sb:kernel:sanskrit_texts",
+      "owner": "science-lab",
+      "role": "the progressive-difficulty source: 254 DCS/GRETIL texts tagged by school/tier/period + specialist-term density",
+      "validator": "run: PYTHONPATH=. python3 pipeline/sanskrit_texts.py"
+    },
+    "pipeline/benchmark_registry.py": {
+      "id": "sb:kernel:benchmark_registry",
+      "owner": "science-lab",
+      "role": "the legitimate content-addressed, versioned benchmark registry (lineage + decontamination audit)",
+      "validator": "run: PYTHONPATH=. python3 pipeline/benchmark_registry.py"
+    },
+    "pipeline/benchmark_runner.py": {
+      "id": "sb:kernel:benchmark_runner",
+      "owner": "science-lab",
+      "role": "run the benchmark: dealradar picks model per tier \u2192 hermes translates \u2192 P\u0101\u1e6dala proof gate \u2192 content-addressed result",
+      "validator": "run: PYTHONPATH=. python3 pipeline/benchmark_runner.py --n 1 --dry-run"
+    },
+    "agent/trace.py": {
+      "id": "sb:agent:trace",
+      "owner": "science-lab",
+      "role": "the central run+experiment trace \u2014 query every hermes run/experiment/log in one command",
+      "validator": "run: python3 agent/trace.py --all"
+    },
+    "agent/verify.py": {
+      "id": "sb:agent:verify",
+      "owner": "science-lab",
+      "role": "the one-command verification gate: proof gate + gold anti-hallucination + content-addressed record",
+      "validator": "run: python3 agent/verify.py --source x --candidate y --gold z"
+    }
+  }
+}

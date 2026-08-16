@@ -1,0 +1,48 @@
+{
+  "step": "proof-check",
+  "run_signature": "94581533bf5c92d1d21123ae2fbea80d37cfce139025ab74271461c2507d72e8",
+  "out_hash": "c8a608e525dd63f551bb7214b0a90dd33f54e052486bc960e949557152446852",
+  "gold_hash": "791f13252c21db4c3a4c72f0d6732382cabeb4b61f7a06672ecfada969bc8169",
+  "code_sha": "0e31163efc57269be0063c816d8cab3ca2e21be8f3bfc1b33015e8c82928496a",
+  "config_sha": "8812974d6a160df3ee8d9cede8c077e02e3132f0c9e6a893d66cf3d54fa7e985",
+  "config": {
+    "model": "deepseek-v4-flash",
+    "n": 3
+  },
+  "metrics": {
+    "avg_chrF": 0.61,
+    "semantic": 0.9
+  },
+  "raw_outputs": [
+    {
+      "id": "pt:passage:ipvv:chunkA-svatyandya.md",
+      "chrF": 0.6
+    },
+    {
+      "id": "pt:passage:ipvv:chunkB-eligibility-gita.md",
+      "chrF": 0.6
+    },
+    {
+      "id": "pt:passage:ipvv:chunkC-svatma-maya-upanishad.md",
+      "chrF": 0.6
+    }
+  ],
+  "git": {
+    "commit": "",
+    "diff": ""
+  },
+  "ts": "2026-08-16T13:03:05.328601+00:00",
+  "nanopublication": {
+    "assertion": "semantic-judge correlates better with human than chrF",
+    "evidence": {
+      "code": "ECO:0000203",
+      "artifact": "run:94581533bf5c"
+    },
+    "provenance": {
+      "run_signature": "94581533bf5c92d1d21123ae2fbea80d37cfce139025ab74271461c2507d72e8",
+      "out_hash": "c8a608e525dd63f551bb7214b0a90dd33f54e052486bc960e949557152446852",
+      "generated_by": "sanskritbenchy/run_recorder.py",
+      "ts": "2026-08-16T13:03:05.328657+00:00"
+    }
+  }
+}
