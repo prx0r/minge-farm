@@ -87,13 +87,15 @@ $ python3 agent/run.py --step checkpoints
 
 ## 5. THE DEV PLANS (which to follow, when)
 
-- **CPU box (now):** `DEV-PLAN-NO-GPU.md` — N1 scale challenge set + verify T- < T+, N2 disagreement at
-  scale, N3 complete the annotation contract, N4 polish multi-ref benchmark, N5 expand triangulation.
+- **CPU box (now):** `DEV-PLAN-NO-GPU-v2.md` (v1 retired) — N1 finish the challenge-set gate, N2 disagreement
+  at scale, N3 complete the annotation contract, N4 polish multi-ref benchmark, N5 expand triangulation, N7
+  import openpatala school/period data (the G6 moat prep). Followed by the retirement process
+  (`RETIRING-A-DEV-PLAN.md` + `agent/plan_audit.py`).
 - **GPU box (when available):** `DEV-PLAN-WITH-GPU.md` — G1 baseline reproduction → G2 COMET meta-validation
   → G3 SaQE → G4 calibration+conformal → G5 LoRA/translator → G6 school/period → G7 proof-carrying → G8
   benchmark+papers.
-- **The immediate next action (CPU):** N1 — expand the challenge set to ~200 controlled bad translations
-  and verify each `bad` scores LOWER than `good` (a deterministic property).
+- **The immediate next action (CPU):** N1 — finish the challenge-set competence gate (complete the T-<T+
+  run that died at 46/196; the verifier is now resilient).
 
 ---
 

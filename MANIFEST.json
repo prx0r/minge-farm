@@ -248,6 +248,12 @@
       "owner": "all",
       "role": "the repeatable process for closing a dev plan honestly (gate run records + file links + commit); the retirement standard",
       "validator": "check.py --refs"
+    },
+    "DEV-PLAN-NO-GPU-v2.md": {
+      "id": "sb:dev-plan-no-gpu-v2",
+      "owner": "all",
+      "role": "the CURRENT CPU dev plan (carries forward incomplete N1-N5 + new N7 openpatala integration); v1 retired",
+      "validator": "check.py --refs"
     }
   },
   "implementation": {

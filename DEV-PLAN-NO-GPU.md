@@ -1,3 +1,7 @@
+> **RETIRED** — superseded by `DEV-PLAN-NO-GPU-v2.md` · 2026-08-16. The incomplete items (N1 gate, N2, N3,
+> N4, N5) carried forward; N7 (openpatala integration) added. Retired via `RETIRING-A-DEV-PLAN.md` +
+> `agent/plan_audit.py` — kept as timestamped history. The GPU path is unchanged (`DEV-PLAN-WITH-GPU.md`).
+
 # DEV PLAN — NO-GPU (the current CPU box, 2026-08-16)
 
 *2026-08-16 · The executable plan for what to keep building on THIS 8GB CPU box (no torch, no GPU). The
