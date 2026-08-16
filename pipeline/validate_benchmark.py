@@ -166,13 +166,31 @@ def validate(n_verses: int, m_cands: int, test: str, model: str, dry_run: bool) 
     # the scientific claim
     best = max(results, key=results.get)
     baseline = results.get("chrF", 0)
-    if results[best] > baseline:
+    claim = results[best] > baseline
+    if claim:
         print(f"\n  ✓ {best} correlates with human judgment BETTER than raw chrF "
               f"({results[best]:+.3f} vs {baseline:+.3f})")
         print(f"  → the combined/quality benchmark is SCIENTIFICALLY BETTER (evidence, not assertion)")
     else:
         print(f"\n  ✗ raw chrF still wins — need a better quality metric")
-    return 0
+
+    # THE ONE RULE: the tau is real only as a content-addressed run record on fixed gold (run_recorder).
+    from run_recorder import RunRecorder
+    gold = [{"test": test, "n_verses": n_verses, "m_candidates": m_cands, "model": model}]
+    rr = RunRecorder()
+    rec = rr.record(
+        step="validate_benchmark", gold=gold,
+        config={"test": test, "n": n_verses, "m": m_cands, "model": model},
+        metrics={"tau": results, "best_metric": best, "beats_chrF": claim,
+                 "chrF_tau": baseline, "best_tau": results[best]},
+        raw=[{"metric": k, "tau": round(float(sum(v) / len(v)), 4) if v else 0.0}
+             for k, v in tau_scores.items()],
+        assertion=f"metric '{best}' Kendall-tau ({results[best]:+.3f}) {'>' if claim else '<='} chrF ({baseline:+.3f}) "
+                  "on fixed gold ⇒ benchmark is scientifically better iff beats_chrF",
+    )
+    print(f"\n  content-addressed run: {rec['run_signature']} (kind={rec['kind']})")
+    print(f"  => {'Phase 1 gate PASSED' if claim else 'Phase 1 gate NOT YET MET'}")
+    return 0 if claim else 1
 
 
 def main() -> int:
