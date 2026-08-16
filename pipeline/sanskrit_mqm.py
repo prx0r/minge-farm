@@ -92,13 +92,26 @@ PERTURBATIONS = [
 ]
 
 # adjective → antonym map (used by ACCURACY_MISTRANSLATION / LEXICAL_SENSE)
+# broad enough that most English gold sentences hit a real antonym → a genuine semantic error
 _ANTONYMS = {
     "good": "evil", "great": "small", "divine": "ordinary", "eternal": "temporary",
     "supreme": "inferior", "wise": "foolish", "pure": "impure", "many": "few",
     "whole": "partial", "bright": "dark", "true": "false", "final": "initial",
     "inner": "outer", "highest": "lowest", "all": "none", "beloved": "hated",
-    "liberated": "bound", "auspicious": "inauspicious", "good": "wicked",
+    "liberated": "bound", "auspicious": "inauspicious", "wicked": "good",
+    "first": "last", "beginning": "end", "begin": "end", "victory": "defeat",
+    "victorious": "defeated", "immortal": "mortal", "happy": "sad",
+    "pleasure": "pain", "love": "hatred", "fear": "courage", "birth": "death",
+    "entered": "left", "came": "left", "gives": "takes", "given": "taken",
+    "comes": "leaves", "knows": "ignores", "free": "bound", "within": "without",
+    "above": "below", "large": "small", "praise": "blame", "honored": "dishonored",
 }
+
+# stopwords (skipped when choosing content words for agent/patient swap)
+_STOP = {"the", "a", "an", "of", "in", "to", "and", "or", "with", "by", "from", "at", "for",
+         "is", "are", "was", "were", "be", "been", "this", "that", "these", "those", "as", "on",
+         "his", "her", "its", "their", "my", "your", "our", "i", "you", "he", "she", "it", "we",
+         "they", "not", "no", "never", "nor", "but", "so", "me", "him", "us", "them", "all"}
 
 # words that signal a quotation boundary / speaker for TEXTUAL_STRUCTURE
 _QUOTE_WORDS = ["said", "replied", "spoke", "asked", "declared", "says", "saying", "told"]
@@ -187,16 +200,22 @@ def make_challenge(gold: str, family: str) -> str:
             return _replace_word(gold, 1, w[::-1])
         return None
     if family == "SYNTAX_KARAKA":
-        # swap the first two content nouns → agent/patient confusion
+        # swap the SUBJECT and OBJECT → agent/patient confusion (who does what to whom is reversed).
+        # Look for "X [verb]ed Y" → "Y [verb]ed X": swap the first content noun and the last content noun.
+        # Fall back to swapping the first two content words.
+        content = [i for i, t in enumerate(toks) if t.group(0).lower() not in _STOP]
+        if len(content) >= 2:
+            i0, i1 = content[0], content[-1]
+            if i0 != i1:
+                return _swap_words(gold, i0, i1)
         return _swap_words(gold, 0, 1)
     if family == "LEXICAL_SENSE":
-        # give a common polysemous word the wrong sense (use an antonym if known)
+        # give a content word the WRONG sense via its antonym → a real semantic shift
         for t in toks:
             w = t.group(0).lower()
             if w in _ANTONYMS:
                 return _replace_word(gold, toks.index(t), _ANTONYMS[w])
-        # fallback: swap the last two words
-        return _swap_words(gold, n - 2, n - 1)
+        return None
     if family == "COREFERENCE":
         # swap a possessive pronoun to the wrong referent (his/her/its → other)
         for t in toks:
@@ -210,14 +229,17 @@ def make_challenge(gold: str, family: str) -> str:
         # re-order the first two adjacent content words → wrong compound head
         return _swap_words(gold, 0, 1)
     if family == "SEGMENTATION_SANDHI":
-        # wrongly split a hyphenated compound / joined word
+        # a genuine mis-segmentation: join a hyphenated/compound term wrongly (not "-"→" " which
+        # preserves meaning). Only fires when a real hyphenated compound exists. Else skip (None).
         for t in toks:
-            if "-" in t.group(0):
-                return _replace_word(gold, toks.index(t), t.group(0).replace("-", " "))
+            if "-" in t.group(0) and len(t.group(0).replace("-", "")) > 3:
+                return _replace_word(gold, toks.index(t), t.group(0).replace("-", ""))
         return None
     if family == "STYLE":
-        # shift register: prefix a colloquial filler (a style mismatch, kept separate from adequacy)
-        return ("Like, " + gold) if gold else None
+        # register shift that degrades readability (a style/register error). STYLE is kept SEPARATE
+        # from factual adequacy in the taxonomy, so this is a readability error, not a meaning error.
+        # Degrade: remove the articles/capitals so it reads as a rough draft, keeping meaning intact.
+        return (gold[0].lower() + gold[1:]).strip() if gold and gold[0].isupper() else None
     return None
 
 

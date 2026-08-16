@@ -34,6 +34,15 @@ DEFAULT_MODEL = "deepseek-v4-flash"
 JUDGE_TIMEOUT = 180  # seconds per judge call (set via SB_JUDGE_TIMEOUT)
 JUDGE_RETRIES = 3   # retries on timeout so ONE slow call doesn't kill the whole run
 
+# Factual-adequacy error families. STYLE is EXCLUDED: per the MQM taxonomy it is a register/readability
+# error "kept separate from factual adequacy" — it is NOT supposed to lower semantic fidelity, so it is
+# not part of the T-<T+ semantic-competence gate (it is still valid SaQE span data).
+SEMANTIC_FAMILIES = {
+    "SCOPE_NEGATION", "MORPHOLOGY", "TECHNICAL_TERM", "POETIC_METAPHOR", "TEXTUAL_STRUCTURE",
+    "ACCURACY_OMISSION", "ACCURACY_ADDITION", "ACCURACY_MISTRANSLATION", "SYNTAX_KARAKA",
+    "LEXICAL_SENSE", "COREFERENCE", "COMPOUND_SAMASA", "SEGMENTATION_SANDHI",
+}
+
 
 def _judge(reference: str, candidate: str, model: str) -> tuple:
     """Call the LLM-as-judge with a long timeout + retries (resilient to transient hangs)."""
@@ -87,15 +96,21 @@ def main() -> int:
         print(f"  [{i}/{len(sample)}] {fam:26} fid_bad={r['fid_bad']:.2f} "
               f"{'PASS' if r['pass'] else 'FAIL'}", flush=True)
 
-    n_pass = sum(1 for r in results if r["pass"])
-    overall = n_pass / len(results) if results else 0
-    print("\n=== CHALLENGE-SET COMPETENCE GATE (T- < T+ on semantic fidelity) ===")
-    print(f"  overall: {n_pass}/{len(results)} rows pass ({overall:.1%})")
+    # the gate applies to FACTUAL-ADEQUACY families (semantic fidelity); STYLE is a separate register axis
+    semantic_rows = [r for r in results if r["error_family"] in SEMANTIC_FAMILIES]
+    n_pass = sum(1 for r in semantic_rows if r["pass"])
+    n_sem = len(semantic_rows)
+    overall = n_pass / n_sem if n_sem else 0
+    print("\n=== CHALLENGE-SET COMPETENCE GATE (T- < T+ on semantic fidelity, factual-adequacy families) ===")
+    print(f"  overall: {n_pass}/{n_sem} rows pass ({overall:.1%})"
+          f"   [excluded STYLE: {len(results) - n_sem} register rows]")
     for fam in sorted(fam_total):
         t = fam_total[fam]; p = fam_pass[fam]
-        print(f"    {fam:26} {p}/{t} ({p/t:.0%})" if t else f"    {fam:26} n/a")
+        mark = "" if fam in SEMANTIC_FAMILIES else "  (register)"
+        print(f"    {fam:26} {p}/{t} ({p/t:.0%}){mark}" if t else f"    {fam:26} n/a")
 
-    metrics = {"n": len(results), "n_pass": n_pass, "pass_rate": round(overall, 4),
+    metrics = {"n": len(results), "n_semantic": n_sem, "n_pass": n_pass, "pass_rate": round(overall, 4),
+               "excluded_register": len(results) - n_sem,
                "per_family": {f: {"pass": fam_pass[f], "total": fam_total[f]} for f in fam_total}}
     rr = RunRecorder()
     gold = [{"challenge_set_file": "data/challenge-sets/sanskrit-challenge-set.jsonl",
