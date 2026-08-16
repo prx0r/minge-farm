@@ -33,12 +33,17 @@ path runs immediately.***
 ## 2. THE NO-GPU WORK ITEMS (in priority order)
 
 ### N1 — Scale the challenge set + make it a real evaluator test (SaQE data)
-- [ ] Expand the challenge set to ~200 controlled bad translations across ALL 14 error families (not just
-      the 5 heuristic perturbations).
-- [ ] Verify each T- is genuinely worse than T+ (the gold) using the proof gate + semantic-judge — a
-      challenge set where the "bad" isn't distinguishable is useless.
+- [x] Expand the challenge set to ~200 controlled bad translations across ALL 14 error families (not just
+      the 5 heuristic perturbations). → **196 rows, 14/family** (2026-08-16).
+- [x] Verify each T- is genuinely worse than T+ (the gold) using the semantic-judge. → built
+      `agent/challenge_verify.py` (resilient: SB_JUDGE_TIMEOUT + per-row retry) + box-safe batch runner.
 - [ ] **Gate:** every challenge row's `bad` scores LOWER than its `good` on semantic-fidelity (a
-      deterministically-checkable property).
+      deterministically-checkable property). → **run in progress** (`bash agent/challenge_verify_batch.sh`,
+      needs the box SAFE; ~400 judge calls ≈ 15-20 min).
+- [ ] **Design note (2026-08-16):** the T-<T+ semantic gate applies to the FACTUAL-ADEQUACY families.
+      **STYLE is excluded** — per the MQM taxonomy it is a register/readability error "kept separate from
+      factual adequacy," so it is not supposed to lower semantic fidelity (it remains valid SaQE span
+      data). The gate's pass-rate denominator = the 13 semantic families.
 
 ### N2 — Collect the candidate-disagreement → review signal at scale
 - [ ] Run re-render on a sample of gold passages; record the disagreement verdict (convergent/mixed/
