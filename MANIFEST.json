@@ -448,6 +448,12 @@
       "owner": "all",
       "role": "verify every challenge-set T- < T+ on semantic fidelity (the N1 SaQE competence gate)",
       "validator": "run: python3 agent/challenge_verify.py --n 2"
+    },
+    "agent/challenge_verify_batch.sh": {
+      "id": "sb:challenge_verify_batch",
+      "owner": "all",
+      "role": "run the full N1 T-<T+ challenge competence gate as one box-safe backgrounded job",
+      "validator": "run: bash agent/challenge_verify_batch.sh --n 2"
     }
   }
 }

@@ -169,6 +169,12 @@ MQM-annotated passages**. Everything else is built.
   CODING-AGENT), pipeline/schemas.py (PROOF_EVIDENCE + more), MANIFEST.
 - **The checkpoint DAG grew to 9 gates** (8 DONE); proof-evidence/triangulation/confidence-contract all
   built + verified.
+- **N1 (2026-08-16):** `sanskrit_mqm.py` expanded to cover all 14 MQM error families (real deterministic
+  perturbations, no placeholders); challenge set grown 15 → **196 rows (14/family)**, data-valid. New
+  `agent/challenge_verify.py` + `agent/challenge_verify_batch.sh` (the T-<T+ competence gate, content-
+  addressed). Wired `step_challenge` into `agent/run.py`, the skill, and MANIFEST.
+- **Commits this session:** `037de6b` (the session's uncommitted modules + docs — Task 1), `dfdc523`
+  (N1 challenge expansion + verifier + wiring).
 
 ---
 
@@ -236,6 +242,19 @@ whole calibration layer.
 PYTHONPATH=. python3 pipeline/sanskrit_mqm.py --challenge 200
 PYTHONPATH=. python3 agent/validate_data.py    # the new rows must validate
 ```
+
+> **STATUS (2026-08-16):** ✅ generation DONE — `sanskrit_mqm.py` now covers ALL 14 error families
+> (real deterministic perturbations, no placeholders); the challenge set is expanded to **196 rows,
+> 14 each across all families**, data-valid (0 violations). A verifier was built:
+> `agent/challenge_verify.py` (scores each bad vs good on semantic fidelity, logs a content-addressed run
+> record, reports per-family pass rate; gate threshold ≥90% bad<good) + a box-safe batch runner
+> `agent/challenge_verify_batch.sh`. ⏳ **The T-<T+ verification is NOT YET RUN** — it needs ~1 judge
+> call per pair and the box was CRITICAL (other agent's OCR) during this session. To finish N1:
+> ```
+> python3 agent/ramwatch.py                      # wait for SAFE
+> setsid nohup bash agent/challenge_verify_batch.sh --n 196 > /tmp/sb-challenge-verify.log 2>&1 &
+> echo "PID $!" && tail -30 /tmp/sb-challenge-verify.log   # check later
+> ```
 
 ### Task 4 (CPU) — Complete the annotation contract (fill candidate_b with a real re-render)
 **What:** wire `agent/annotation.py` to fill `candidate_b` with a REAL re-rendered variant (not a
