@@ -31,11 +31,30 @@ from run_recorder import RunRecorder  # noqa: E402  (content-addressed provenanc
 
 DEFAULT_MODEL = "deepseek-v4-flash"
 
+JUDGE_TIMEOUT = 180  # seconds per judge call (set via SB_JUDGE_TIMEOUT)
+JUDGE_RETRIES = 3   # retries on timeout so ONE slow call doesn't kill the whole run
+
+
+def _judge(reference: str, candidate: str, model: str) -> tuple:
+    """Call the LLM-as-judge with a long timeout + retries (resilient to transient hangs)."""
+    import os, subprocess, time
+    os.environ["SB_JUDGE_TIMEOUT"] = str(JUDGE_TIMEOUT)
+    last = (0.0, "__TIMEOUT__")
+    for attempt in range(1, JUDGE_RETRIES + 1):
+        try:
+            return semantic_fidelity(model, reference, candidate)
+        except subprocess.TimeoutExpired:
+            last = (0.0, f"__TIMEOUT__{attempt}/{JUDGE_RETRIES}")
+            print(f"    (judge timeout, retry {attempt}/{JUDGE_RETRIES})", flush=True)
+            if attempt < JUDGE_RETRIES:
+                time.sleep(2 * attempt)
+    return last
+
 
 def verify_one(row: dict, model: str) -> dict:
     """Score good (always 1.0) vs bad (measured); return whether the bad is genuinely worse."""
-    _, judg_good = semantic_fidelity(model, row["good"], row["good"])
-    fid_bad, judg_bad = semantic_fidelity(model, row["good"], row["bad"])
+    _, judg_good = _judge(row["good"], row["good"], model)
+    fid_bad, judg_bad = _judge(row["good"], row["bad"], model)
     fid_good = 1.0  # a good translation preserves its own meaning exactly
     return {
         "error_family": row["error_family"],

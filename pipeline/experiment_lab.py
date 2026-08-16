@@ -172,10 +172,12 @@ def bleu1(reference: str, candidate: str) -> float:
 def semantic_fidelity(model: str, reference: str, candidate: str) -> tuple[int, str]:
     """LLM-as-judge 0-1 semantic fidelity (the quality axis). Returns (fidelity, judgment)."""
     from model import chat
+    import os as _os
+    timeout = int(_os.environ.get("SB_JUDGE_TIMEOUT", "120"))
     system = ("You are a strict Sanskrit translation judge. Rate how faithfully the CANDIDATE "
               "preserves the MEANING of the GOLD reference. Score 1-5 where 5=exact. Return exactly "
               "JSON: {\"fidelity\": <1-5>, \"judgment\": \"<why>\"}.")
-    raw = chat(system, f"GOLD: {reference}\n\nCANDIDATE: {candidate}", model=model, timeout=90)
+    raw = chat(system, f"GOLD: {reference}\n\nCANDIDATE: {candidate}", model=model, timeout=timeout)
     import json as _json
     try:
         raw = re.sub(r"```(?:json)?", "", raw)
