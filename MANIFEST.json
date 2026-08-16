@@ -414,10 +414,10 @@
       "validator": "run: PYTHONPATH=. python3 pipeline/data_import.py --catalog"
     },
     "pipeline/sanskrit_mqm.py": {
-      "id": "sb:kernel:sanskrit_mqm",
-      "owner": "science-lab",
-      "role": "the Sanskrit MQM error taxonomy + challenge-set generator (controlled bad translations \u2014 SaQE training material)",
-      "validator": "run: PYTHONPATH=. python3 pipeline/sanskrit_mqm.py --taxonomy"
+      "id": "sb:sanskrit_mqm",
+      "owner": "all",
+      "role": "Sanskrit MQM taxonomy + controlled bad-translation challenge-set generator",
+      "validator": "run: python3 pipeline/sanskrit_mqm.py --taxonomy"
     },
     "agent/annotation.py": {
       "id": "sb:agent:annotation",
@@ -442,6 +442,12 @@
       "owner": "science-lab",
       "role": "cross-canon (Tibetan/Chinese) triangulation evidence channel (\u00a73,\u00a713) via MITRA",
       "validator": "run: PYTHONPATH=. python3 pipeline/triangulation.py"
+    },
+    "agent/challenge_verify.py": {
+      "id": "sb:challenge_verify",
+      "owner": "all",
+      "role": "verify every challenge-set T- < T+ on semantic fidelity (the N1 SaQE competence gate)",
+      "validator": "run: python3 agent/challenge_verify.py --n 2"
     }
   }
 }

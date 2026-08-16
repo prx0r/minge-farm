@@ -234,6 +234,15 @@ def step_checkpoints() -> dict:
     return rec
 
 
+def step_challenge(n: int) -> dict:
+    """Generate the challenge set (controlled bad translations, all 14 MQM error families) + report."""
+    out = _sh("python3", str(ROOT / "pipeline" / "sanskrit_mqm.py"), "--challenge", str(n), timeout=180)
+    rec = {"step": "challenge", "n": n, "output": out[-2000:]}
+    log_line(rec)
+    print(out)
+    return rec
+
+
 def step_render(n: int, dry: bool) -> dict:
     """Re-render a passage into N equally-valid translations (the vision's core capability)."""
     out = _sh("python3", str(ROOT / "pipeline" / "renderer.py"), "--passage", "0",
@@ -293,6 +302,7 @@ STEPS = {
     "verify": step_verify,
     "checkpoints": step_checkpoints, "render": step_render, "finetune": step_finetune,
     "tree_search": step_tree_search, "memory": step_memory,
+    "challenge": step_challenge,
 }
 
 
@@ -354,6 +364,8 @@ def main() -> int:
         step_tree_search(2, 2, False)
     elif args.step == "memory":
         step_memory(args.search, False)
+    elif args.step == "challenge":
+        step_challenge(args.n)
     return 0
 
 

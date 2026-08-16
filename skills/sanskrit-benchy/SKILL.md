@@ -80,6 +80,8 @@ is to run the right step, read the logged result, and never claim more than the 
 |---|---|---|
 | `python3 agent/run.py --step checkpoints` | **see the vision→checkpoint DAG + what's next** | the autonomous goal-hitting mechanism |
 | `python3 agent/run.py --step memory --search <q>` | **remember/query past lab decisions** | the deterministic temporal memory (anti-regression) |
+| `python3 agent/run.py --step challenge --n 200` | **build the SaQE training data** | controlled bad translations across all 14 MQM error families |
+| `python3 agent/challenge_verify.py --n 20` | **prove the SaQE data is usable** | verify each `bad` < `good` on semantic fidelity (the N1 gate) |
 
 ### 1.7 The watchdog (scheduled, autonomous)
 | Command | When | What |
