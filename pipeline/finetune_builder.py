@@ -45,7 +45,7 @@ def build(n: int, dry: bool) -> dict:
         if dry:
             continue
         # re-render into the other registers; keep only VALID candidates
-        r = render_one(src, gold, len(REGISTERS), "deepseek-v4-flash", dry=False)
+        r = render_one(src, gold, len(REGISTERS), "mimo-v2.5", dry=False)
         for c in r["candidates"]:
             if c.get("valid") and c.get("candidate") != gold:
                 reg = c["register"]

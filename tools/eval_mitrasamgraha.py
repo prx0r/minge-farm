@@ -12,8 +12,8 @@ This harness:
      seed, date, config) so the score resolves to a real experiment.
 
 Usage:
-  python3 tools/eval_mitrasamgraha.py --n 20 --model deepseek-v4-flash
-  python3 tools/eval_mitrasamgraha.py --n 5 --model deepseek-v4-flash --dry-run   # no model calls
+  python3 tools/eval_mitrasamgraha.py --n 20 --model mimo-v2.5
+  python3 tools/eval_mitrasamgraha.py --n 5 --model mimo-v2.5 --dry-run   # no model calls
 """
 from __future__ import annotations
 
@@ -33,7 +33,7 @@ LOG = ROOT / "data/corpus" / "mitrasamgraha-eval-log.jsonl"
 sys.path.insert(0, str(ROOT / "pipeline"))
 
 GOLD_VERSION = "mitrasamgraha-test-v1"
-DEFAULT_MODEL = "deepseek-v4-flash"
+DEFAULT_MODEL = "mimo-v2.5"
 
 
 def _syllable_count(s: str) -> int:

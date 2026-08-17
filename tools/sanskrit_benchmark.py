@@ -16,7 +16,7 @@ per-tradition, per-model leaderboard with a cost-quality view.
 Usage:
   python3 tools/sanskrit_benchmark.py --report            # the 4-axis leaderboard from logged experiments
   python3 tools/sanskrit_benchmark.py --tradition Krama   # the Krama gold subset (control)
-  python3 tools/sanskrit_benchmark.py --cost --model deepseek-v4-flash   # cost axis for one model
+  python3 tools/sanskrit_benchmark.py --cost --model mimo-v2.5   # cost axis for one model
 """
 from __future__ import annotations
 
@@ -51,7 +51,7 @@ def _price_for(model: str):
             by_name = models
         p = by_name.get(model) or by_name.get(model.split("/")[-1])
         if not p:
-            # fuzzy: match by the bare name anywhere in the key (e.g. deepseek-v4-flash-0731)
+            # fuzzy: match by the bare name anywhere in the key (e.g. mimo-v2.5-0731)
             for k, cand in by_name.items():
                 if model.split("/")[-1].split("-")[0] in k and model.split("/")[-1].split("-")[1] in k:
                     p = cand
@@ -115,7 +115,7 @@ def main() -> int:
     ap.add_argument("--report", action="store_true")
     ap.add_argument("--tradition", default=None)
     ap.add_argument("--cost", action="store_true", help="show the cost axis for one model")
-    ap.add_argument("--model", default="deepseek-v4-flash")
+    ap.add_argument("--model", default="mimo-v2.5")
     args = ap.parse_args()
 
     if args.tradition:

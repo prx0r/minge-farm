@@ -21,14 +21,14 @@ cd /root/sanskritbenchy
 PYTHONPATH=. python3 -c "
 import sys; sys.path.insert(0,'pipeline')
 from model import chat
-print(chat('You are a Sanskrit translator. Output only the translation.', 'Translate: namaste lokāḥ', model='deepseek-v4-flash', timeout=90))
+print(chat('You are a Sanskrit translator. Output only the translation.', 'Translate: namaste lokāḥ', model='mimo-v2.5', timeout=90))
 "
 # → 'Homage to you, O worlds.'
 ```
 
 ## 2. HOW THE LAB CALLS THE MODEL
 
-- **`pipeline/model.py`** — the client. Shells out to `hermes -z <prompt> -m deepseek-v4-flash
+- **`pipeline/model.py`** — the client. Shells out to `hermes -z <prompt> -m mimo-v2.5
   --provider opencode-go`. **1M context, no token cap** (max_tokens is deliberately unenforced) — long
   IPVV passages are fine, no truncation needed.
 - **`translate(model, source)`** in `experiment_lab.py` — the single-translation call.
@@ -38,7 +38,7 @@ print(chat('You are a Sanskrit translator. Output only the translation.', 'Trans
 **The key call signature** (from `model.py`):
 ```python
 from model import chat
-chat(system, user, model="deepseek-v4-flash", timeout=90)
+chat(system, user, model="mimo-v2.5", timeout=90)
 # timeout: pass a LARGE value (600+) for long passages — the earlier "0 candidates" on IPVV was a
 # per-call timeout (default 90s), NOT a context limit.
 ```

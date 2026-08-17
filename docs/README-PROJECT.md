@@ -104,7 +104,7 @@ conditioning (Phase C) and the Sanskrit DA/MQM gold (Phase A).**
 | `pipeline/hypothesis_lab.py` | open-ended observe→reason→hypothesize→test→keep loop | ✅ `--propose` |
 | `pipeline/validate_benchmark.py` | **THE meta-eval: tau of each metric vs the judge** (adopt MTME stats) | ⚠️ v2 built, needs completion |
 | `pipeline/comet_scorer.py` | the learned-metric (COMET) adapter — Phase B baseline | ✅ scaffold (needs torch) |
-| `pipeline/model.py` | the hermes client (deepseek-v4-flash, 1M context) — the only external call | ✅ |
+| `pipeline/model.py` | the hermes client (mimo-v2.5, 1M context) — the only external call | ✅ |
 | `tools/sanskrit_benchmark.py` | the better-benchmark leaderboard: per-tradition × quality × proof × **cost** (413 prices) | ✅ works |
 | `tools/eval_mitrasamgraha.py` | the Mitrasamgraha eval harness (chrF/bleu/semantic-judge + lineage) | ✅ works |
 
@@ -116,7 +116,7 @@ conditioning (Phase C) and the Sanskrit DA/MQM gold (Phase A).**
 
 ## 4. THE MEASURED RESULTS (logged in the registry — `experiments.jsonl`)
 
-**Mitrasamgraha baseline (deepseek-v4-flash):** avg chrF ~0.55, bleu ~0.35, **semantic-fidelity ~0.8–0.9**
+**Mitrasamgraha baseline (mimo-v2.5):** avg chrF ~0.55, bleu ~0.35, **semantic-fidelity ~0.8–0.9**
 (LLM-judge). **BLEU/chrF UNDERSTATE good Sanskrit** (meaning right, wording differs) → the semantic-judge
 is the honest quality axis.
 
@@ -126,7 +126,7 @@ is the honest quality axis.
 | 60816T022005 | 3 | 0.591 | 0.399 | 0.800 |
 | 60816T022207 | 3 | 0.581 | 0.341 | 0.733 |
 
-**Cost:** deepseek-v4-flash = **$10.88 / 1000 verses** → ~0.08 quality/$. **Proof gate:** faithful→PASS,
+**Cost:** mimo-v2.5 = **$10.88 / 1000 verses** → ~0.08 quality/$. **Proof gate:** faithful→PASS,
 hallucinated→BLOCKED(SOURCE_BINDING), source-repeat→BLOCKED(ABSTENTION).
 
 ---
@@ -173,7 +173,7 @@ PYTHONPATH=. python3 pipeline/validate_benchmark.py --n 2 --m 3 --test mitrasamg
 PYTHONPATH=. python3 pipeline/hypothesis_lab.py --propose
 # the benchmark leaderboard + cost router
 PYTHONPATH=. python3 tools/sanskrit_benchmark.py --report
-PYTHONPATH=. python3 tools/sanskrit_benchmark.py --cost --model deepseek-v4-flash
+PYTHONPATH=. python3 tools/sanskrit_benchmark.py --cost --model mimo-v2.5
 # the Mitrasamgraha eval
 PYTHONPATH=. python3 tools/eval_mitrasamgraha.py --n 10 --judge
 # the learned-metric adapter (Phase B — needs torch)

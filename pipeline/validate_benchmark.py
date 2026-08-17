@@ -199,7 +199,7 @@ def main() -> int:
     ap.add_argument("--m", type=int, default=3, help="candidate translations per verse")
     ap.add_argument("--test", default="mitrasamgraha",
                     help="gold source: mitrasamgraha | ipvv | kramasadbhava | frontier:saamayik | frontier:itihasa")
-    ap.add_argument("--model", default="deepseek-v4-flash")
+    ap.add_argument("--model", default="mimo-v2.5")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
     return validate(args.n, args.m, args.test, args.model, args.dry_run)

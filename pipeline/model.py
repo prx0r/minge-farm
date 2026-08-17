@@ -19,7 +19,7 @@ from dataclasses import dataclass
 from typing import Any, Optional
 
 BASE_URL = "https://opencode.ai/zen/go/v1"
-DEFAULT_MODEL = "deepseek-v4-flash"
+DEFAULT_MODEL = "mimo-v2.5"
 HERMES_BIN = os.environ.get("HERMES_BIN", "hermes")
 
 
@@ -85,7 +85,7 @@ def _hermes_call(prompt: str, model: str = DEFAULT_MODEL, timeout: int = 120, _r
     # (opencode-go) is not picked up by `-z` for this model, causing "Provider 'deepseek' set in
     # config.yaml but no API key" / "HTTP 401: Model not supported" on every call. Match the
     # verified working invocation:
-    #   hermes -z "<prompt>" -m deepseek-v4-flash --provider opencode-go
+    #   hermes -z "<prompt>" -m mimo-v2.5 --provider opencode-go
     provider = os.environ.get("HERMES_PROVIDER", "opencode-go")
     last = None
     for attempt in range(_retries + 1):

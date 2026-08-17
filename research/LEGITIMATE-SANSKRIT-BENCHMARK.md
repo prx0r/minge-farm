@@ -79,7 +79,7 @@ decontamination audit; a real Pratyabhijñā passage was translated and the proo
 dealradar recommends the best model **per difficulty-tier task** (T3/T4 → reasoning-heavy; T1 → cheap/fast),
 which the runner uses to pick WHICH model to test on each Sanskrit passage. We record both the dealradar
 recommendation AND the hermes-executed model in the lineage (honest — the recommendation is tracked even
-when the actual call uses deepseek-v4-flash).
+when the actual call uses mimo-v2.5).
 
 ## 5. THE HONEST GAPS (what needs humans/private resources — not code)
 

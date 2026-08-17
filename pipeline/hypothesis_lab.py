@@ -40,21 +40,21 @@ HYP_LOG = ROOT / "data" / "corpus" / "registries" / "hypotheses.jsonl"
 # the KNOWN error-family → hypothesis map (the seed; novel ones come from the judge's reasoning)
 KNOWN_HYPOTHESES = [
     {"family": "compound semantic loss", "prompt_hint": "Decompose every compound into its members before translating; preserve each member's meaning.",
-     "config": {"batch_mode": "char", "model": "deepseek-v4-flash"}},
+     "config": {"batch_mode": "char", "model": "mimo-v2.5"}},
     {"family": "case-role inversion", "prompt_hint": "Carefully track the grammatical case/role of each noun; preserve subject-object structure.",
-     "config": {"model": "deepseek-v4-flash"}},
+     "config": {"model": "mimo-v2.5"}},
     {"family": "negation loss", "prompt_hint": "Check for negation markers; make sure the negation is preserved in English.",
-     "config": {"model": "deepseek-v4-flash"}},
+     "config": {"model": "mimo-v2.5"}},
     {"family": "implicit subject", "prompt_hint": "Identify the implicit subject from verb agreement; make it explicit in English.",
-     "config": {"model": "deepseek-v4-flash"}},
+     "config": {"model": "mimo-v2.5"}},
     {"family": "technical-term substitution", "prompt_hint": "Use the canonical glossary; keep technical terms (jñāna, māyā, ātman) consistent.",
-     "config": {"model": "deepseek-v4-flash"}},
+     "config": {"model": "mimo-v2.5"}},
     {"family": "scope loss", "prompt_hint": "Preserve quantifier scope and universal/all claims exactly.",
-     "config": {"model": "deepseek-v4-flash"}},
+     "config": {"model": "mimo-v2.5"}},
     {"family": "metaphor literalisation", "prompt_hint": "Recognize figurative language; render metaphor as metaphor, not literal prose.",
-     "config": {"model": "deepseek-v4-flash"}},
+     "config": {"model": "mimo-v2.5"}},
     {"family": "dropped pāda", "prompt_hint": "Translate every clause/pāda; ensure full verse coverage.",
-     "config": {"model": "deepseek-v4-flash"}},
+     "config": {"model": "mimo-v2.5"}},
 ]
 
 
@@ -217,7 +217,7 @@ def main() -> int:
     ap.add_argument("--rounds", type=int, default=1)
     ap.add_argument("--n", type=int, default=3)
     ap.add_argument("--test", default="mitrasamgraha")
-    ap.add_argument("--model", default="deepseek-v4-flash")
+    ap.add_argument("--model", default="mimo-v2.5")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 

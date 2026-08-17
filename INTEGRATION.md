@@ -62,7 +62,7 @@ tree_search (AIDE) · memory (DML decisions)
 - **Benchmark:** `benchmark_registry.py` (content-addressed) + `benchmark_runner.py` (dealradar picks model)
 - **Product vision:** `renderer.py` (re-render equally-valid) + `finetune_builder.py` (LoRA pairs) +
   `tree_search.py` (AIDE strategy search)
-- **Model:** `model.py` (hermes → deepseek-v4-flash, 1M ctx)
+- **Model:** `model.py` (hermes → mimo-v2.5, 1M ctx)
 
 ### 3.3 The verification spine (`agent/` + `run_recorder.py`) — the anti-hallucination
 - **`run_recorder.py`** — content-addressed records + nanopublication + **eigenius 4-kind ladder**

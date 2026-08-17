@@ -44,7 +44,7 @@ The provenance core. Every headline number is a run record here.
 | `experiment_id` | string | `EXP-<layer>-<config>-<hash>-<ts>` |
 | `layer` | string | L2/T1/C1/... |
 | `config_key` | string | l2-flash, etc. |
-| `model` | string | deepseek-v4-flash |
+| `model` | string | mimo-v2.5 |
 | `test` | string | mitrasamgraha |
 | `data_hash` | string | content hash of the test set |
 | `n` | int | number of verses |

@@ -30,11 +30,11 @@ def pick_model_for_tier(tier: int) -> dict:
 
     Returns {"recommended": <dealradar's model>, "executed": <hermes-callable model>}.
     dealradar recommends an OpenRouter model (e.g. nvidia/nemotron-3-ultra); the actual translation runs
-    via hermes (deepseek-v4-flash) because that's what hermes can reach on this box. We record BOTH —
+    via hermes (mimo-v2.5) because that's what hermes can reach on this box. We record BOTH —
     the recommendation and what actually ran — so the lineage is honest.
     """
     task = "reasoning" if tier >= 3 else "extraction"
-    recommended = "deepseek-v4-flash"
+    recommended = "mimo-v2.5"
     try:
         from routing import recommend
         res = recommend(task=task, min_quality=0.4, limit=1)
@@ -44,11 +44,11 @@ def pick_model_for_tier(tier: int) -> dict:
         else:
             for k in ("model", "best", "top"):
                 if res.get(k):
-                    recommended = res[k] if isinstance(res[k], str) else res[k].get("model", "deepseek-v4-flash")
+                    recommended = res[k] if isinstance(res[k], str) else res[k].get("model", "mimo-v2.5")
     except Exception as e:
         print(f"  (dealradar pick failed: {e})")
     # the model hermes actually runs (this box); the recommended model is tracked for the lineage
-    return {"recommended": recommended, "executed": "deepseek-v4-flash"}
+    return {"recommended": recommended, "executed": "mimo-v2.5"}
 
 
 def run_benchmark(n_per_school: int = 2, max_chars: int = 1500, dry_run: bool = False) -> dict:

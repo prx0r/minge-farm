@@ -124,7 +124,7 @@ def main() -> int:
     ap.add_argument("--gold", default="")
     ap.add_argument("--passage", type=int, default=-1)
     ap.add_argument("--n", type=int, default=4)
-    ap.add_argument("--model", default="deepseek-v4-flash")
+    ap.add_argument("--model", default="mimo-v2.5")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
 

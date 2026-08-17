@@ -25,7 +25,7 @@ checkpoint DAG (8/9 gates done), the annotation contract. The GPU phase consumes
 
 ### G1 — Baseline reproduction (the blueprint's very first step)
 - [ ] Install torch + `unbabel-comet` on the GPU box.
-- [ ] Run **MITRA-MT, MITRA-Qwen3.5, a generic current model, deepseek-v4-flash** over the SAME
+- [ ] Run **MITRA-MT, MITRA-Qwen3.5, a generic current model, mimo-v2.5** over the SAME
       Mitrasamgraha test passages. Store every candidate (content-addressed).
 - [ ] Run **xCOMET, MetricX-25, GEMBA-MQM** over those outputs.
 - [ ] **Gate:** a content-addressed candidate + evaluator matrix across models.

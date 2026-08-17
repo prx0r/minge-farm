@@ -13,7 +13,7 @@ logged number / a real artifact exists, not when a file is written. Order: **Pha
   source-repeat→BLOCKED(ABSTENTION). Verified.
 - [x] Experiment lab + registry — `experiment_lab.py`: 3 logged experiments, `--report`, `--sweep`.
 - [x] Frontier datasets imported — Sāmayik (2,417), Itihāsa (11,721) → `data/frontier/` + `frontier_gold.py`.
-- [x] Hermes callable — `pipeline/model.py` works (deepseek-v4-flash, 1M context).
+- [x] Hermes callable — `pipeline/model.py` works (mimo-v2.5, 1M context).
 - [x] Research deep-dives — COMET/crypto, HF/LoRA/persona, how-we-beat.
 
 ## PHASE 1 — the FIRST real proof (immediate, no torch)

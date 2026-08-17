@@ -147,7 +147,7 @@ the *verifier*.
                            ▼
 ┌─ EXECUTION (the lab) ───────────────────────────────────┐
 │  agent/run.py (orchestrator — every step logs)          │
-│  model.py (hermes → deepseek-v4-flash, 1M ctx)          │
+│  model.py (hermes → mimo-v2.5, 1M ctx)          │
 │  pipeline/*.py (gold, benchmark, proof, runner, COMET)  │
 │  tree_search.py (AIDE metric-grounded strategy search)  │
 │  agent/memory.py (DML deterministic temporal memory)    │

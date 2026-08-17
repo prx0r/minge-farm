@@ -54,7 +54,7 @@ torch box, it scores our gold + re-renders, and we compare its tau vs chrF vs ou
 ## 3. THE TRAINING ENVIRONMENT — frontier translation methods
 
 ### 3.1 The base model + why
-We translate with a **strong multilingual LLM** (deepseek-v4-flash via hermes now; the frontier uses
+We translate with a **strong multilingual LLM** (mimo-v2.5 via hermes now; the frontier uses
 NLLB-200 / IndicTrans / Gemma). For a *proper* trainable system, the base is one of:
 - **IndicTrans2/3** (AI4Bharat) — SOTA Indic MT incl. Sanskrit `san_Deva`; ships COMET eval scripts.
 - **NLLB-200** (Meta) — 200-language MT; the Sāmayik baseline.

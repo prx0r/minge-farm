@@ -104,7 +104,7 @@ into trainable adapters. All of it passes through the same content-addressed ver
   invented terms, the darshana-graph rule).
 - **[x] Experiment lab + registry** — `experiment_lab.py` (3 logged, report/sweep).
 - **[x] Frontier datasets** — Sāmayik (2,417), Itihāsa (11,721), MITRA cross-canon (imported).
-- **[x] Hermes callable** — `model.py` (deepseek-v4-flash, 1M ctx).
+- **[x] Hermes callable** — `model.py` (mimo-v2.5, 1M ctx).
 - **[x] Re-render** — `renderer.py`: N equally-valid translations + candidate-disagreement signal. **Verified:**
   3 valid candidates, convergent.
 - **[x] Fine-tune data** — `finetune_builder.py`: LoRA register-pair data.

@@ -33,8 +33,8 @@ Format (jsonl): `{"sanskrit": "…", "english": "…"}` — real IAST Sanskrit +
 `tools/eval_mitrasamgraha.py` — samples test pairs, calls the model to translate, scores vs gold:
 
 ```bash
-python3 tools/eval_mitrasamgraha.py --n 20 --model deepseek-v4-flash                # chrF + bleu
-python3 tools/eval_mitrasamgraha.py --n 20 --model deepseek-v4-flash --judge-model deepseek-v4-flash  # + LLM semantic judge
+python3 tools/eval_mitrasamgraha.py --n 20 --model mimo-v2.5                # chrF + bleu
+python3 tools/eval_mitrasamgraha.py --n 20 --model mimo-v2.5 --judge-model mimo-v2.5  # + LLM semantic judge
 python3 tools/eval_mitrasamgraha.py --n 3 --dry-run                                   # print sample only
 ```
 
@@ -50,7 +50,7 @@ it scores, so low-chrF / low-fidelity rows can be read directly for manual error
 judge's free-text reasoning per row is also captured (the `judgment` field) — the raw material for
 `pipeline/hypothesis_lab.py`.
 
-## 4. FIRST MEASURED RESULTS (deepseek-v4-flash)
+## 4. FIRST MEASURED RESULTS (mimo-v2.5)
 
 | n | avg chrF | avg bleu1 | semantic |
 |---|---|---|---|

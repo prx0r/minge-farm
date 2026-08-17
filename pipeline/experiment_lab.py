@@ -42,7 +42,7 @@ GOLD_RECORDS = ROOT / "pipeline" / "gold_records"
 IPVV_GOLDS = ROOT / "data" / "published" / "ipvv"
 MITRA_TEST = ROOT / "data" / "benchmarks" / "mitrasamgraha" / "test.jsonl"
 
-DEFAULT_MODEL = "deepseek-v4-flash"
+DEFAULT_MODEL = "mimo-v2.5"
 
 # the fixed test-set sources the lab can score against (control variable)
 TEST_SOURCES = {
@@ -82,10 +82,10 @@ _register_frontier()
 
 # the config / hypothesis matrix (per LAB.md §3)
 CONFIGS = {
-    "l2-flash": {"layer": "L2", "model": "deepseek-v4-flash", "hypothesis": "flash baseline L2"},
+    "l2-flash": {"layer": "L2", "model": "mimo-v2.5", "hypothesis": "flash baseline L2"},
     "l2-pro": {"layer": "L2", "model": "deepseek-v4-pro", "hypothesis": "pro L2 (quality-critical)"},
-    "t1-flash": {"layer": "T1", "model": "deepseek-v4-flash", "hypothesis": "flash T1 gloss"},
-    "c1-flash": {"layer": "C1", "model": "deepseek-v4-flash", "hypothesis": "flash C1 commentary"},
+    "t1-flash": {"layer": "T1", "model": "mimo-v2.5", "hypothesis": "flash T1 gloss"},
+    "c1-flash": {"layer": "C1", "model": "mimo-v2.5", "hypothesis": "flash C1 commentary"},
 }
 
 
@@ -317,7 +317,7 @@ def sweep(layer, test, n, trials, target, dry_run):
     print(f"=== SWEEP {layer} on {test} ({trials} trials, target={target}) ===")
     for t in range(trials):
         # propose a config: vary the model (flash/pro) + judge on/off
-        model = rng.choice(["deepseek-v4-flash", "deepseek-v4-pro"])
+        model = rng.choice(["mimo-v2.5", "deepseek-v4-pro"])
         judge = (target == "quality")  # judge pass only when targeting quality (burn-conscious)
         cfg_key = "l2-flash" if "flash" in model else "l2-pro"
         print(f"\n--- Trial {t+1}: model={model} judge={judge} ---")

@@ -29,7 +29,7 @@ sys.path.insert(0, str(ROOT / "pipeline"))
 from experiment_lab import semantic_fidelity  # noqa: E402  (the LLM-as-judge)
 from run_recorder import RunRecorder  # noqa: E402  (content-addressed provenance)
 
-DEFAULT_MODEL = "deepseek-v4-flash"
+DEFAULT_MODEL = "mimo-v2.5"
 
 JUDGE_TIMEOUT = 180  # seconds per judge call (set via SB_JUDGE_TIMEOUT)
 JUDGE_RETRIES = 3   # retries on timeout so ONE slow call doesn't kill the whole run

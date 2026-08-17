@@ -57,7 +57,7 @@ what exists, what's verified, and what's next (needs a GPU/human).*
 
 ## 2. THE REAL RESULTS (verified, content-addressed)
 
-- **Mitrasamgraha baseline (deepseek-v4-flash):** chrF 0.593, bleu 0.352, **semantic-fidelity 0.76**, proof 10/10 PASS — BLEU/chrF understate good Sanskrit.
+- **Mitrasamgraha baseline (mimo-v2.5):** chrF 0.593, bleu 0.352, **semantic-fidelity 0.76**, proof 10/10 PASS — BLEU/chrF understate good Sanskrit.
 - **Re-render:** a full passage → **3 equally-valid translations** (literal/plain/natural, all PASS + 0.8 semantic; precise correctly rejected). Disagreement signal = **convergent** (0.71).
 - **Tree search:** baseline 0.700, honestly reported "no improvement" (no fabricated win).
 - **The verification layer:** eigenius VERIFIED kind applied when the proof gate passes; CITATION_GROUNDING catches invented philosophical terms.

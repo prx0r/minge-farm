@@ -10,7 +10,7 @@ monitor). Violating any rule here is a bug in your process.*
 ## 1. THE #1 RULE — NEVER TIMEOUT, ALWAYS KEEP WORKING
 
 ### 1.1 The problem
-This box (8GB/4-core, shared with another agent) is SLOW. Model calls (hermes → deepseek-v4-flash) take
+This box (8GB/4-core, shared with another agent) is SLOW. Model calls (hermes → mimo-v2.5) take
 15–40s each, and a real experiment (re-render, tree-search, benchmark) makes MANY of them serially. If you
 run a heavy job in the FOREGROUND, the shell times out (120s default) and you lose the thread.
 

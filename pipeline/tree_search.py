@@ -27,7 +27,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "pipeline"))
 
 # the root strategy = the baseline hypothesis (each child is a mutation of the prompt/config)
-BASE_STRATEGY = {"hint": "Translate faithfully, preserving meaning.", "model": "deepseek-v4-flash"}
+BASE_STRATEGY = {"hint": "Translate faithfully, preserving meaning.", "model": "mimo-v2.5"}
 
 # the strategy-mutation operators (how children differ from parents)
 MUTATIONS = [
@@ -101,7 +101,7 @@ def search(depth: int, fanout: int, n: int, dry: bool) -> dict:
     from sanskrit_gold import clean_exemplars
     rows = [e for e in clean_exemplars() if e["work"] == "mitrasamgraha"][:n]
     print(f"=== METRIC-GROUNDED TREE SEARCH (depth={depth}, fanout={fanout}, n={n}) ===")
-    root = build_tree(rows, "deepseek-v4-flash", depth, fanout, dry)
+    root = build_tree(rows, "mimo-v2.5", depth, fanout, dry)
     best = best_node(root)
     print(f"  root score: {root.score:.3f} ({root.strategy['hint'][:40]})")
     print(f"  BEST node:  {best.score:.3f} ({best.strategy['hint'][:40]})")
@@ -110,7 +110,7 @@ def search(depth: int, fanout: int, n: int, dry: bool) -> dict:
     from run_recorder import RunRecorder
     rec = RunRecorder().record(
         step="tree_search", gold=[{"source": r["source"], "gold": r["gold"]} for r in rows],
-        config={"depth": depth, "fanout": fanout, "n": n, "model": "deepseek-v4-flash", "dry": dry},
+        config={"depth": depth, "fanout": fanout, "n": n, "model": "mimo-v2.5", "dry": dry},
         metrics={"root_score": round(root.score, 4), "best_score": round(best.score, 4)},
         assertion=f"metric-grounded tree search: best strategy scores {best.score:.3f} "
                   f"vs baseline {root.score:.3f} (a real computed number, not an opinion)")

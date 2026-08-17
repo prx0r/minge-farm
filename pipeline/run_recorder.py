@@ -147,7 +147,7 @@ if __name__ == "__main__":
     rec = RunRecorder()
     gold = exemplars()[:3]
     r = rec.record(step="proof-check", gold=gold,
-                   config={"model": "deepseek-v4-flash", "n": 3},
+                   config={"model": "mimo-v2.5", "n": 3},
                    metrics={"avg_chrF": 0.61, "semantic": 0.9},
                    raw=[{"id": g["id"], "chrF": 0.6} for g in gold],
                    assertion="semantic-judge correlates better with human than chrF")

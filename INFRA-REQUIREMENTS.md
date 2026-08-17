@@ -49,7 +49,7 @@ itihasa (have) · saamayik (have)   ✅ have — auxiliary + domain control
 
 ```
 PHASE 0 — REPRODUCE THE BASELINE (the blueprint's very first step)
-  1. Run MITRA-MT · MITRA-Qwen3.5 · a generic model · deepseek-v4-flash
+  1. Run MITRA-MT · MITRA-Qwen3.5 · a generic model · mimo-v2.5
      over the SAME Mitrasamgraha test passages. Store every candidate (content-addressed).
   2. Run xCOMET · MetricX · GEMBA-MQM · morphology/alignment · candidate-disagreement
      over those outputs. (torch box)
