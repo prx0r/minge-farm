@@ -1,5 +1,5 @@
-# minge-farm
+# OpenPatala Translations
 
-clunj.exe
+OpenPatala Translation Graph — discovery & indexing pipeline.
 
-fuck off.
+Finds actual translations for Sanskrit works, proves they are downloadable, tiers them, and serves them via FastAPI. Indexes 257+ works.
